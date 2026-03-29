@@ -758,6 +758,446 @@
       </div>
     </section>
 
+    <!-- World Tech News Section -->
+    <section class="section section--alt" id="world-news">
+      <div class="container">
+        <div class="section-head">
+          <h2>Dünya Teknoloji Haberleri</h2>
+          <p>Global teknoloji gelişmeleri ve yenilikler</p>
+        </div>
+
+        <!-- Region Filter -->
+        <div class="region-filter">
+          <button class="region-btn active" data-region="all">Tümü</button>
+          <button class="region-btn" data-region="usa">ABD</button>
+          <button class="region-btn" data-region="europe">Avrupa</button>
+          <button class="region-btn" data-region="asia">Asya</button>
+          <button class="region-btn" data-region="middle-east">Orta Doğu</button>
+        </div>
+
+        <!-- Language Toggle -->
+        <div class="language-toggle">
+          <button class="lang-btn active" data-lang="tr">Türkçe</button>
+          <button class="lang-btn" data-lang="en">English</button>
+        </div>
+
+        <div class="world-news-grid" id="world-news-grid">
+          <!-- USA News -->
+          <article class="world-news-card" data-region="usa" data-lang="tr">
+            <div class="world-news-header">
+              <span class="country-flag">🇺🇸</span>
+              <span class="country-name">ABD</span>
+              <span class="news-time">2 saat önce</span>
+            </div>
+            <h3><a href="#">Apple yeni M4 çipleri duyurdu: Yapay zekâ performansında %50 artış</a></h3>
+            <p>Silicon Valley devi, yeni nesil işlemcilerinde makine öğrenimi yeteneklerini güçlendirdi.</p>
+            <div class="world-news-actions">
+              <button class="action-btn like-btn" data-likes="42">
+                <span class="action-icon">👍</span>
+                <span class="action-count">42</span>
+              </button>
+              <button class="action-btn comment-btn" data-comments="8">
+                <span class="action-icon">💬</span>
+                <span class="action-count">8</span>
+              </button>
+              <button class="action-btn share-btn">
+                <span class="action-icon">📤</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Europe News -->
+          <article class="world-news-card" data-region="europe" data-lang="tr">
+            <div class="world-news-header">
+              <span class="country-flag">🇪🇺</span>
+              <span class="country-name">Avrupa</span>
+              <span class="news-time">4 saat önce</span>
+            </div>
+            <h3><a href="#">ABD dijital para birimi düzenlemesini onayladı</a></h3>
+            <p>Avrupa Merkez Bankası, kripto varlıklar için yeni yönetmelikleri kabul etti.</p>
+            <div class="world-news-actions">
+              <button class="action-btn like-btn" data-likes="28">
+                <span class="action-icon">👍</span>
+                <span class="action-count">28</span>
+              </button>
+              <button class="action-btn comment-btn" data-comments="5">
+                <span class="action-icon">💬</span>
+                <span class="action-count">5</span>
+              </button>
+              <button class="action-btn share-btn">
+                <span class="action-icon">📤</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Asia News -->
+          <article class="world-news-card" data-region="asia" data-lang="tr">
+            <div class="world-news-header">
+              <span class="country-flag">🇯🇵</span>
+              <span class="country-name">Japonya</span>
+              <span class="news-time">6 saat önce</span>
+            </div>
+            <h3><a href="#">Sony yeni nesil VR gözlüğü piyasaya sürdü</a></h3>
+            <p>8K çözünürlük ve haptic feedback teknolojisi ile oyun deneyimini yeniden tanımlıyor.</p>
+            <div class="world-news-actions">
+              <button class="action-btn like-btn" data-likes="67">
+                <span class="action-icon">👍</span>
+                <span class="action-count">67</span>
+              </button>
+              <button class="action-btn comment-btn" data-comments="12">
+                <span class="action-icon">💬</span>
+                <span class="action-count">12</span>
+              </button>
+              <button class="action-btn share-btn">
+                <span class="action-icon">📤</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Middle East News -->
+          <article class="world-news-card" data-region="middle-east" data-lang="tr">
+            <div class="world-news-header">
+              <span class="country-flag">🇦🇪</span>
+              <span class="country-name">BAE</span>
+              <span class="news-time">8 saat önce</span>
+            </div>
+            <h3><a href="#">Dubai akıllı şehir projesinde yapay zekâ entegrasyonu tamamladı</a></h3>
+            <p>Trafik yönetimi ve enerji verimliliği için AI sistemleri devreye alındı.</p>
+            <div class="world-news-actions">
+              <button class="action-btn like-btn" data-likes="35">
+                <span class="action-icon">👍</span>
+                <span class="action-count">35</span>
+              </button>
+              <button class="action-btn comment-btn" data-comments="7">
+                <span class="action-icon">💬</span>
+                <span class="action-count">7</span>
+              </button>
+              <button class="action-btn share-btn">
+                <span class="action-icon">📤</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Analytics and Trends Section -->
+    <section class="section" id="analytics">
+      <div class="container">
+        <div class="section-head">
+          <h2>İstatistikler ve Trendler</h2>
+          <p>En çok okunan haberler ve popüler konular</p>
+        </div>
+
+        <div class="analytics-grid">
+          <!-- Most Read News -->
+          <div class="analytics-card">
+            <h3>🔥 En Çok Okunan Haberler</h3>
+            <div class="trending-list">
+              <div class="trending-item" data-rank="1">
+                <span class="trending-rank">1</span>
+                <div class="trending-content">
+                  <h4><a href="#">Büyük dil modellerinde bağlam penceresi genişliyor</a></h4>
+                  <div class="trending-stats">
+                    <span class="trending-views">15.2K görüntüleme</span>
+                    <span class="trending-engagement">89% etkileşim</span>
+                  </div>
+                </div>
+                <span class="trending-trend up">↑</span>
+              </div>
+              
+              <div class="trending-item" data-rank="2">
+                <span class="trending-rank">2</span>
+                <div class="trending-content">
+                  <h4><a href="#">Apple yeni M4 çipleri duyurdu</a></h4>
+                  <div class="trending-stats">
+                    <span class="trending-views">12.8K görüntüleme</span>
+                    <span class="trending-engagement">76% etkileşim</span>
+                  </div>
+                </div>
+                <span class="trending-trend up">↑</span>
+              </div>
+              
+              <div class="trending-item" data-rank="3">
+                <span class="trending-rank">3</span>
+                <div class="trending-content">
+                  <h4><a href="#">Grafik kartı piyasasında orta segment yenileniyor</a></h4>
+                  <div class="trending-stats">
+                    <span class="trending-views">11.5K görüntüleme</span>
+                    <span class="trending-engagement">82% etkileşim</span>
+                  </div>
+                </div>
+                <span class="trending-trend down">↓</span>
+              </div>
+              
+              <div class="trending-item" data-rank="4">
+                <span class="trending-rank">4</span>
+                <div class="trending-content">
+                  <h4><a href="#">Sony yeni nesil VR gözlüğü piyasaya sürdü</a></h4>
+                  <div class="trending-stats">
+                    <span class="trending-views">9.3K görüntüleme</span>
+                    <span class="trending-engagement">71% etkileşim</span>
+                  </div>
+                </div>
+                <span class="trending-trend new">YENİ</span>
+              </div>
+              
+              <div class="trending-item" data-rank="5">
+                <span class="trending-rank">5</span>
+                <div class="trending-content">
+                  <h4><a href="#">Steam'de yılın ilk indirim etkinliği</a></h4>
+                  <div class="trending-stats">
+                    <span class="trending-views">8.7K görüntüleme</span>
+                    <span class="trending-engagement">68% etkileşim</span>
+                  </div>
+                </div>
+                <span class="trending-trend up">↑</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trending Topics -->
+          <div class="analytics-card">
+            <h3>📈 Trend Konular</h3>
+            <div class="topics-cloud">
+              <div class="topic-tag" data-size="large">Yapay Zekâ</div>
+              <div class="topic-tag" data-size="medium">Oyun Konsolları</div>
+              <div class="topic-tag" data-size="large">Blockchain</div>
+              <div class="topic-tag" data-size="small">5G</div>
+              <div class="topic-tag" data-size="medium">VR/AR</div>
+              <div class="topic-tag" data-size="large">Elektrikli Araçlar</div>
+              <div class="topic-tag" data-size="small">IoT</div>
+              <div class="topic-tag" data-size="medium">Kuantum Bilgisayar</div>
+              <div class="topic-tag" data-size="large">Cybersecurity</div>
+              <div class="topic-tag" data-size="small">Metaverse</div>
+              <div class="topic-tag" data-size="medium">Bulut Bilişim</div>
+              <div class="topic-tag" data-size="large">Mobil Teknoloji</div>
+            </div>
+          </div>
+
+          <!-- User Statistics -->
+          <div class="analytics-card">
+            <h3>👥 Kullanıcı İstatistikleri</h3>
+            <div class="user-stats">
+              <div class="stat-item">
+                <div class="stat-icon">👁️</div>
+                <div class="stat-info">
+                  <span class="stat-number">45.2K</span>
+                  <span class="stat-label">Aylık Ziyaretçi</span>
+                </div>
+              </div>
+              
+              <div class="stat-item">
+                <div class="stat-icon">⏱️</div>
+                <div class="stat-info">
+                  <span class="stat-number">4:32</span>
+                  <span class="stat-label">Ortalama Süre</span>
+                </div>
+              </div>
+              
+              <div class="stat-item">
+                <div class="stat-icon">📱</div>
+                <div class="stat-info">
+                  <span class="stat-number">67%</span>
+                  <span class="stat-label">Mobil Kullanıcı</span>
+                </div>
+              </div>
+              
+              <div class="stat-item">
+                <div class="stat-icon">🔄</div>
+                <div class="stat-info">
+                  <span class="stat-number">23%</span>
+                  <span class="stat-label">Geri Dönüş Oranı</span>
+                </div>
+              </div>
+              
+              <div class="stat-item">
+                <div class="stat-icon">💬</div>
+                <div class="stat-info">
+                  <span class="stat-number">1,247</span>
+                  <span class="stat-label">Yorum Sayısı</span>
+                </div>
+              </div>
+              
+              <div class="stat-item">
+                <div class="stat-icon">📤</div>
+                <div class="stat-info">
+                  <span class="stat-number">892</span>
+                  <span class="stat-label">Paylaşım</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gaming Section -->
+    <section class="section section--alt" id="gaming">
+      <div class="container">
+        <div class="section-head">
+          <h2>🎮 Teknoloji Quizleri</h2>
+          <p>Bilginizi test edin ve puan tablosunda yerinizi alın!</p>
+        </div>
+
+        <div class="gaming-grid">
+          <!-- Quiz Categories -->
+          <div class="quiz-categories">
+            <h3>Quiz Kategorileri</h3>
+            <div class="category-grid">
+              <div class="quiz-category" data-category="ai">
+                <div class="category-icon">🤖</div>
+                <h4>Yapay Zekâ</h4>
+                <p>AI ve makine öğrenimi</p>
+                <span class="difficulty">Orta</span>
+              </div>
+              
+              <div class="quiz-category" data-category="hardware">
+                <div class="category-icon">💻</div>
+                <h4>Donanım</h4>
+                <p>İşlemciler, ekran kartları</p>
+                <span class="difficulty">Kolay</span>
+              </div>
+              
+              <div class="quiz-category" data-category="gaming">
+                <div class="category-icon">🎯</div>
+                <h4>Oyun</h4>
+                <p>Oyun konsolları ve oyunlar</p>
+                <span class="difficulty">Kolay</span>
+              </div>
+              
+              <div class="quiz-category" data-category="mobile">
+                <div class="category-icon">📱</div>
+                <h4>Mobil Teknoloji</h4>
+                <p>Akıllı telefonlar ve uygulamalar</p>
+                <span class="difficulty">Orta</span>
+              </div>
+              
+              <div class="quiz-category" data-category="security">
+                <div class="category-icon">🔒</div>
+                <h4>Siber Güvenlik</h4>
+                <p>Güvenlik ve veri koruma</p>
+                <span class="difficulty">Zor</span>
+              </div>
+              
+              <div class="quiz-category" data-category="space">
+                <div class="category-icon">🚀</div>
+                <h4>Uzay Teknolojisi</h4>
+                <p>Uzay araştırmaları ve roketler</p>
+                <span class="difficulty">Zor</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quiz Interface -->
+          <div class="quiz-interface">
+            <div class="quiz-header">
+              <h3 id="quiz-title">Quiz Seçin</h3>
+              <div class="quiz-progress">
+                <span id="question-number">0/10</span>
+                <div class="progress-bar">
+                  <div class="progress-fill" id="progress-fill"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="quiz-content" id="quiz-content">
+              <div class="quiz-welcome">
+                <div class="welcome-icon">🎮</div>
+                <h4>Teknoloji Quiz'ine Hoş Geldiniz!</h4>
+                <p>Bir kategori seçerek başlayın. Her quiz 10 sorudan oluşur ve puanınız kaydedilir.</p>
+                <button class="btn btn-primary" id="start-quiz-btn">Başla</button>
+              </div>
+            </div>
+            
+            <div class="quiz-actions" id="quiz-actions" style="display: none;">
+              <button class="btn btn-secondary" id="skip-btn">Atla</button>
+              <button class="btn btn-primary" id="next-btn">Sonraki</button>
+            </div>
+          </div>
+
+          <!-- Leaderboard -->
+          <div class="leaderboard">
+            <h3>🏆 Puan Tablosu</h3>
+            <div class="leaderboard-tabs">
+              <button class="tab-btn active" data-period="daily">Günlük</button>
+              <button class="tab-btn" data-period="weekly">Haftalık</button>
+              <button class="tab-btn" data-period="all-time">Tüm Zamanlar</button>
+            </div>
+            
+            <div class="leaderboard-list" id="leaderboard-list">
+              <div class="leaderboard-item" data-rank="1">
+                <span class="rank-medal">🥇</span>
+                <div class="player-info">
+                  <span class="player-name">TechMaster2024</span>
+                  <span class="player-score">2,450 puan</span>
+                </div>
+                <span class="player-badge">👑</span>
+              </div>
+              
+              <div class="leaderboard-item" data-rank="2">
+                <span class="rank-medal">🥈</span>
+                <div class="player-info">
+                  <span class="player-name">AIGuru</span>
+                  <span class="player-score">2,380 puan</span>
+                </div>
+                <span class="player-badge">⚡</span>
+              </div>
+              
+              <div class="leaderboard-item" data-rank="3">
+                <span class="rank-medal">🥉</span>
+                <div class="player-info">
+                  <span class="player-name">CyberNinja</span>
+                  <span class="player-score">2,290 puan</span>
+                </div>
+                <span class="player-badge">🔥</span>
+              </div>
+              
+              <div class="leaderboard-item" data-rank="4">
+                <span class="rank-number">4</span>
+                <div class="player-info">
+                  <span class="player-name">CodeWarrior</span>
+                  <span class="player-score">2,150 puan</span>
+                </div>
+              </div>
+              
+              <div class="leaderboard-item" data-rank="5">
+                <span class="rank-number">5</span>
+                <div class="player-info">
+                  <span class="player-name">DataScientist</span>
+                  <span class="player-score">2,080 puan</span>
+                </div>
+              </div>
+              
+              <div class="leaderboard-item current-user" data-rank="12">
+                <span class="rank-number">12</span>
+                <div class="player-info">
+                  <span class="player-name">Siz</span>
+                  <span class="player-score">1,450 puan</span>
+                </div>
+                <span class="user-badge">🎯</span>
+              </div>
+            </div>
+            
+            <div class="user-stats-mini">
+              <div class="mini-stat">
+                <span class="mini-label">Sıralamanız</span>
+                <span class="mini-value">#12</span>
+              </div>
+              <div class="mini-stat">
+                <span class="mini-label">Toplam Puan</span>
+                <span class="mini-value">1,450</span>
+              </div>
+              <div class="mini-stat">
+                <span class="mini-label">Tamamlanan Quiz</span>
+                <span class="mini-value">8</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Newsletter Subscription Section -->
     <section id="bulten" class="section section-alt">
       <div class="wrap narrow">
@@ -1072,6 +1512,122 @@
       // Fetch real rates immediately and then every 5 minutes
       fetchRealRates();
       setInterval(fetchRealRates, 300000); // 5 minutes for real data
+    })();
+
+    // World News Functionality
+    (function initWorldNews() {
+      const regionBtns = document.querySelectorAll('.region-btn');
+      const langBtns = document.querySelectorAll('.lang-btn');
+      const worldNewsGrid = document.getElementById('world-news-grid');
+      
+      // Region filtering
+      regionBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const region = this.dataset.region;
+          
+          // Update active button
+          regionBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Filter news
+          const newsCards = worldNewsGrid.querySelectorAll('.world-news-card');
+          newsCards.forEach(card => {
+            if (region === 'all' || card.dataset.region === region) {
+              card.style.display = 'block';
+              card.style.animation = 'fadeInUp 0.6s ease-out forwards';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+      
+      // Language toggle
+      langBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const lang = this.dataset.lang;
+          
+          // Update active button
+          langBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Translate content
+          translateNews(lang);
+        });
+      });
+      
+      // Like/Comment functionality
+      const actionBtns = document.querySelectorAll('.action-btn');
+      actionBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          if (this.classList.contains('like-btn')) {
+            const count = this.querySelector('.action-count');
+            const currentLikes = parseInt(count.textContent);
+            
+            if (this.classList.contains('liked')) {
+              this.classList.remove('liked');
+              count.textContent = currentLikes - 1;
+            } else {
+              this.classList.add('liked');
+              count.textContent = currentLikes + 1;
+            }
+          } else if (this.classList.contains('comment-btn')) {
+            // Open comment modal (simplified)
+            alert('Yorum özelliği yakında eklenecek!');
+          } else if (this.classList.contains('share-btn')) {
+            // Share functionality
+            if (navigator.share) {
+              navigator.share({
+                title: 'Teknoloji Haberleri',
+                text: 'İlginç bir teknoloji haberi!',
+                url: window.location.href
+              });
+            } else {
+              // Fallback
+              navigator.clipboard.writeText(window.location.href);
+              alert('Link kopyalandı!');
+            }
+          }
+        });
+      });
+      
+      // Translation function
+      function translateNews(lang) {
+        const translations = {
+          en: {
+            'Apple yeni M4 çipleri duyurdu: Yapay zekâ performansında %50 artış': 'Apple announces new M4 chips: 50% AI performance increase',
+            'Silicon Valley devi, yeni nesil işlemcilerinde makine öğrenimi yeteneklerini güçlendirdi.': 'Silicon Valley giant strengthens machine learning capabilities in new generation processors.',
+            'ABD dijital para birimi düzenlemesini onayladı': 'EU approves digital currency regulations',
+            'Avrupa Merkez Bankası, kripto varlıklar için yeni yönetmelikleri kabul etti.': 'European Central Bank adopts new regulations for crypto assets.',
+            'Sony yeni nesil VR gözlüğü piyasaya sürdü': 'Sony releases next-gen VR headset',
+            '8K çözünürlük ve haptic feedback teknolojisi ile oyun deneyimini yeniden tanımlıyor.': 'Redefining gaming experience with 8K resolution and haptic feedback technology.',
+            'Dubai akıllı şehir projesinde yapay zekâ entegrasyonu tamamladı': 'Dubai completes AI integration in smart city project',
+            'Trafik yönetimi ve enerji verimliliği için AI sistemleri devreye alındı.': 'AI systems deployed for traffic management and energy efficiency.'
+          }
+        };
+        
+        const newsCards = worldNewsGrid.querySelectorAll('.world-news-card');
+        newsCards.forEach(card => {
+          const title = card.querySelector('h3 a');
+          const description = card.querySelector('p');
+          
+          if (lang === 'en' && translations.en[title.textContent]) {
+            title.textContent = translations.en[title.textContent];
+            const descKey = description.textContent.trim();
+            // Find matching description translation
+            for (const [tr, en] of Object.entries(translations.en)) {
+              if (tr.includes(descKey.substring(0, 20))) {
+                description.textContent = en;
+                break;
+              }
+            }
+          }
+          // For Turkish, revert to original (simplified)
+          else if (lang === 'tr') {
+            // Original content is already Turkish
+          }
+        });
+      }
     })();
 
     // Newsletter Form Functionality
