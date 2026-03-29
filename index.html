@@ -104,6 +104,20 @@
 
         </label>
 
+        <button class="theme-toggle" id="theme-toggle" aria-label="Temayı değiştir">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+
         <nav class="nav" id="main-nav" aria-label="Ana menü">
 
           <a href="#haberler" class="nav-link">Ana Sayfa</a>
@@ -3435,6 +3449,83 @@
       });
     });
 
+    // Tema Değiştirici Fonksiyonları
+    function acTemaPaneli() {
+      document.getElementById('theme-panel').classList.add('theme-panel--active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function kapatTemaPaneli() {
+      document.getElementById('theme-panel').classList.remove('theme-panel--active');
+      document.body.style.overflow = '';
+    }
+
+    function degistirTema(themeName) {
+      // Tema verilerini data-theme attribute olarak ekle
+      document.documentElement.setAttribute('data-theme', themeName);
+      
+      // Aktif tema butonunu güncelle
+      document.querySelectorAll('.theme-option').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.querySelector(`[data-theme="${themeName}"]`).classList.add('active');
+      
+      // Local storage'a kaydet
+      localStorage.setItem('secilenTema', themeName);
+      
+      // Paneli kapat
+      kapatTemaPaneli();
+    }
+
+    function yukleTema() {
+      // Local storage'dan temayı yükle
+      const kayitliTema = localStorage.getItem('secilenTema');
+      if (kayitliTema) {
+        document.documentElement.setAttribute('data-theme', kayitliTema);
+        // Aktif butonu güncelle
+        document.querySelectorAll('.theme-option').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        const aktifBtn = document.querySelector(`[data-theme="${kayitliTema}"]`);
+        if (aktifBtn) {
+          aktifBtn.classList.add('active');
+        }
+      }
+    }
+
+    // Tema toggle butonuna event listener ekle
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', acTemaPaneli);
+      }
+      
+      // Sayfa yüklendiğinde temayı yükle
+      yukleTema();
+      
+      // ESC tuşu ile paneli kapatma
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          const themePanel = document.getElementById('theme-panel');
+          if (themePanel.classList.contains('theme-panel--active')) {
+            kapatTemaPaneli();
+          }
+        }
+      });
+      
+      // Panel dışına tıklayınca kapatma
+      document.addEventListener('click', function(e) {
+        const themePanel = document.getElementById('theme-panel');
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        
+        if (themePanel.classList.contains('theme-panel--active') && 
+            !themePanel.contains(e.target) && 
+            !themeToggleBtn.contains(e.target)) {
+          kapatTemaPaneli();
+        }
+      });
+    });
+
   </script>
 
   <!-- Haber Detay Modal -->
@@ -3496,6 +3587,78 @@
             </button>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tema Seçici Panel -->
+  <div id="theme-panel" class="theme-panel">
+    <div class="theme-panel__header">
+      <h3>Tema Seç</h3>
+      <button class="theme-panel__close" onclick="kapatTemaPaneli()" aria-label="Kapat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="theme-panel__content">
+      <div class="theme-grid">
+        <button class="theme-option active" data-theme="default" onclick="degistirTema('default')">
+          <div class="theme-preview theme-preview--default">
+            <div class="theme-preview__bg"></div>
+            <div class="theme-preview__accent"></div>
+          </div>
+          <span class="theme-name">Varsayılan</span>
+        </button>
+        
+        <button class="theme-option" data-theme="black-white" onclick="degistirTema('black-white')">
+          <div class="theme-preview theme-preview--black-white">
+            <div class="theme-preview__bg"></div>
+            <div class="theme-preview__accent"></div>
+          </div>
+          <span class="theme-name">Siyah Beyaz</span>
+        </button>
+        
+        <button class="theme-option" data-theme="white" onclick="degistirTema('white')">
+          <div class="theme-preview theme-preview--white">
+            <div class="theme-preview__bg"></div>
+            <div class="theme-preview__accent"></div>
+          </div>
+          <span class="theme-name">Beyaz</span>
+        </button>
+        
+        <button class="theme-option" data-theme="black" onclick="degistirTema('black')">
+          <div class="theme-preview theme-preview--black">
+            <div class="theme-preview__bg"></div>
+            <div class="theme-preview__accent"></div>
+          </div>
+          <span class="theme-name">Siyah</span>
+        </button>
+        
+        <button class="theme-option" data-theme="red" onclick="degistirTema('red')">
+          <div class="theme-preview theme-preview--red">
+            <div class="theme-preview__bg"></div>
+            <div class="theme-preview__accent"></div>
+          </div>
+          <span class="theme-name">Kırmızı</span>
+        </button>
+        
+        <button class="theme-option" data-theme="blue" onclick="degistirTema('blue')">
+          <div class="theme-preview theme-preview--blue">
+            <div class="theme-preview__bg"></div>
+            <div class="theme-preview__accent"></div>
+          </div>
+          <span class="theme-name">Mavi</span>
+        </button>
+        
+        <button class="theme-option" data-theme="red-black" onclick="degistirTema('red-black')">
+          <div class="theme-preview theme-preview--red-black">
+            <div class="theme-preview__bg"></div>
+            <div class="theme-preview__accent"></div>
+          </div>
+          <span class="theme-name">Kırmızı Siyah</span>
+        </button>
       </div>
     </div>
   </div>
