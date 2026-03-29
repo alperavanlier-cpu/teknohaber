@@ -1,616 +1,901 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="TeknoHaber — teknoloji ve oyun dünyasından güncel haberler, görseller ve özetler." />
-  <title>TeknoHaber | Teknoloji ve Oyun Haberleri</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <a class="skip-link" href="#haberler">Haberlere atla</a>
+/* Temel değişkenler */
+:root {
+  --bg: #0a0b0e;
+  --bg-alt: rgba(18, 20, 28, 0.72);
+  --text: #e6e8ec;
+  --muted: #98a1b0;
+  --accent: #5ecfff;
+  --accent-hover: #9ddbff;
+  --border: rgba(255, 255, 255, 0.09);
+  --radius: 14px;
+  --max: 1120px;
+  --narrow: 640px;
+  --font-display: "Outfit", "DM Sans", system-ui, sans-serif;
+}
 
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="logo" href="#">TeknoHaber</a>
-      <div class="header-tools">
-        <label class="header-search" for="nav-search">
-          <span class="visually-hidden">Haberlerde ara</span>
-          <input type="search" id="nav-search" class="search-input search-input--nav" placeholder="Başlıkta ara…" autocomplete="off" />
-        </label>
-        <nav class="nav" aria-label="Ana menü">
-          <a href="#haberler">Haberler</a>
-          <a href="#hakkinda">Hakkında</a>
-          <a href="#iletisim">İletişim</a>
-        </nav>
-      </div>
-    </div>
-  </header>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-  <main>
-    <section class="hero">
-      <div class="wrap hero-inner">
-        <p class="eyebrow">Güncel</p>
-        <h1>Teknoloji ve oyun dünyası tek adreste</h1>
-        <p class="lead">
-          Görsel özetler, kategori filtreleri ve arama ile haberlere hızlıca ulaşın.
-          TeknoHaber — teknoloji, oyun ve dijital gündem.
-        </p>
-        <a class="btn" href="#one-cikan">Öne çıkanı gör</a>
-      </div>
-    </section>
+html {
+  scroll-behavior: smooth;
+}
 
-    <section id="one-cikan" class="featured-wrap section-tight">
-      <div class="wrap">
-        <h2 class="featured-title">Öne çıkan</h2>
-        <article class="featured-card">
-          <a class="featured-card__link" href="#haber-1">
-            <figure class="featured-card__media">
-              <img
-                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=960&h=540&fit=crop&q=80"
-                alt=""
-                width="960"
-                height="540"
-                loading="eager"
-                fetchpriority="high"
-                decoding="async"
-              />
-              <figcaption class="visually-hidden">Büyük dil modellerinde bağlam penceresi genişliyor</figcaption>
-            </figure>
-            <div class="featured-card__content">
-              <span class="tag tag-ai">Yapay zekâ</span>
-              <time datetime="2026-03-28">28 Mart 2026</time>
-              <h2>Büyük dil modellerinde bağlam penceresi genişliyor</h2>
-              <p>Uzun dokümanları tek seferde işleyebilen yeni mimariler, araştırma ve üretkenlik araçlarında tartışma başlattı.</p>
-              <span class="featured-card__cta">Devamını oku</span>
-            </div>
-          </a>
-        </article>
-      </div>
-    </section>
+/* Yumuşak hareketli siyah–gri–beyaz tonları (parlak beyaz yok, göz yormaz) */
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: var(--bg);
+}
 
-    <section id="haberler" class="section section-alt">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Tüm haberler</h2>
-          <p class="section-desc">Görselli özetler — arama ve kategori ile süzün.</p>
-        </div>
+.bg-layer::before,
+.bg-layer::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  opacity: 0.55;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 30%, rgba(200, 205, 215, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 45% at 85% 75%, rgba(140, 145, 155, 0.09) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(90, 95, 105, 0.06) 0%, transparent 45%);
+  animation: bg-float 22s ease-in-out infinite alternate;
+}
 
-        <div class="news-toolbar" role="region" aria-label="Haber filtreleri">
-          <label class="search-field">
-            <span class="search-field__label">Ara</span>
-            <input type="search" id="haber-ara" class="search-input" placeholder="Başlık veya özet içinde ara…" autocomplete="off" aria-describedby="haber-sonuc" />
-          </label>
-          <div class="filter-chips" id="kategori-filtre" role="group" aria-label="Kategori">
-            <button type="button" class="chip chip--active" data-filter="all">Tümü</button>
-            <button type="button" class="chip" data-filter="ai">Yapay zekâ</button>
-            <button type="button" class="chip" data-filter="game">Oyun</button>
-            <button type="button" class="chip" data-filter="hardware">Donanım</button>
-            <button type="button" class="chip" data-filter="console">Konsol</button>
-            <button type="button" class="chip" data-filter="mobile">Mobil</button>
-            <button type="button" class="chip" data-filter="security">Güvenlik</button>
-            <button type="button" class="chip" data-filter="esport">e-Spor</button>
-            <button type="button" class="chip" data-filter="vr">VR / AR</button>
-            <button type="button" class="chip" data-filter="indie">İndie</button>
-            <button type="button" class="chip" data-filter="cloud">Bulut</button>
-            <button type="button" class="chip" data-filter="pc">PC</button>
-            <button type="button" class="chip" data-filter="software">Yazılım</button>
-            <button type="button" class="chip" data-filter="smart">Akıllı ev</button>
-            <button type="button" class="chip" data-filter="retro">Retro</button>
-          </div>
-          <p id="haber-sonuc" class="news-result" aria-live="polite">24 haber gösteriliyor</p>
-        </div>
+.bg-layer::after {
+  opacity: 0.4;
+  animation: bg-float 28s ease-in-out infinite alternate-reverse;
+  background:
+    linear-gradient(125deg, transparent 40%, rgba(255, 255, 255, 0.03) 50%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 60% 20%, rgba(180, 185, 195, 0.05) 0%, transparent 55%);
+  filter: blur(1px);
+}
 
-        <p id="haber-bos" class="news-empty hidden" role="status">Sonuç bulunamadı. Farklı bir arama veya kategori deneyin.</p>
+@keyframes bg-float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(2%, -2%) scale(1.04);
+  }
+}
 
-        <ul class="news-grid" id="haber-listesi">
-          <li class="news-card" id="haber-1" data-category="ai" data-search="büyük dil modellerinde bağlam penceresi genişliyor uzun dokümanları tek seferde işleyebilen yeni mimariler araştırma üretkenlik">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-ai">Yapay zekâ</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-28">28 Mart 2026</time>
-                  <h3>Büyük dil modellerinde bağlam penceresi genişliyor</h3>
-                  <p>Uzun dokümanları tek seferde işleyebilen yeni mimariler, araştırma ve üretkenlik araçlarında tartışma başlattı.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="game" data-search="açık dünya rpg mod desteği resmileşti topluluk içerikleri mağaza çeviri">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-game">Oyun</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-27">27 Mart 2026</time>
-                  <h3>Açık dünya RPG’sinde mod desteği resmileşti</h3>
-                  <p>Topluluk içerikleri resmi araçlarla mağazaya taşınabilecek; çeviri ve düzenleme paketleri öne çıkıyor.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="hardware" data-search="grafik kartı orta segment 1080p 1440p güç tüketimi performans">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-hardware">Donanım</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-26">26 Mart 2026</time>
-                  <h3>Grafik kartı piyasasında orta segment yenileniyor</h3>
-                  <p>1080p ve 1440p oyunlarda güç tüketimi ile performans dengesi yeni kartlarda öncelik haline geldi.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="console" data-search="el konsolu pil ömrü güncelleme taşınabilir oyun">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-console">Konsol</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-25">25 Mart 2026</time>
-                  <h3>El konsolunda pil ömrü güncellemesi yayınlandı</h3>
-                  <p>Arka plan işlemleri sınırlandırılarak taşınabilir oyun süresi uzatıldı; kullanıcılar geri bildirimle karşıladı.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="mobile" data-search="mağaza uygulama gizlilik etiketleri veri toplama geliştirici">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1511707171634-5f89730757fd?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-mobile">Mobil</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-24">24 Mart 2026</time>
-                  <h3>Üç büyük mağaza uygulama gizlilik etiketlerini sıkılaştırdı</h3>
-                  <p>Veri toplama politikaları daha okunur hale getirildi; geliştiricilere geçiş süresi tanındı.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="security" data-search="kurumsal e-posta kimlik avı çok faktörlü doğrulama kılavuz">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-security">Güvenlik</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-23">23 Mart 2026</time>
-                  <h3>Kurumsal e-postalarda kimlik avına karşı yeni kılavuz</h3>
-                  <p>Çok faktörlü doğrulama ve alan adı doğrulaması birlikte ele alındı; küçük işletmelere yönelik öneriler yayınlandı.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="esport" data-search="uluslararası turnuva format çift eleme bilet">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1542751110-97427bb68320?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-esport">e-Spor</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-22">22 Mart 2026</time>
-                  <h3>Uluslararası turnuvada format değişikliği duyuruldu</h3>
-                  <p>Çift eleme ve grup aşaması birleştirildi; seyirci sayısı için bilet satışı erken açıldı.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="vr" data-search="karma gerçeklik gözlük fiyat ofis eğitim oyun demosu">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1593508512255-4ab69b9230e6?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-vr">VR / AR</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-21">21 Mart 2026</time>
-                  <h3>Hafif karma gerçeklik gözlüğü fiyat bandı netleşti</h3>
-                  <p>Ofis ve eğitim senaryoları için odaklanan model, oyun demosu paketiyle geliyor.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="indie" data-search="türkiye yapımı bulmaca oyun ödül festival yaratıcı oynanış">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-indie">İndie</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-20">20 Mart 2026</time>
-                  <h3>Türkiye yapımı bulmaca oyunu ödül listesinde</h3>
-                  <p>Uluslararası festivalde “yaratıcı oynanış” kategorisinde aday gösterildi.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="cloud" data-search="oyun yayınlama hizmeti bölge sunucu abonelik">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-cloud">Bulut</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-19">19 Mart 2026</time>
-                  <h3>Oyun yayınlama hizmeti yeni bölgeye açıldı</h3>
-                  <p>Gecikme süreleri için yerel sunucu kümesi devreye alındı; abonelik planlarına oyun paketi eklendi.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="pc" data-search="steam indirim etkinliği istek listesi demo kooperatif">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-pc">PC</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-18">18 Mart 2026</time>
-                  <h3>Steam’de yılın ilk indirim etkinliği tarihleri açıklandı</h3>
-                  <p>İstek listesi ve demolarla birlikte kooperatif oyunlara vurgu yapılacak.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="software" data-search="açık kaynak paket yöneticisi güvenlik yayın imzası geçiş">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-software">Yazılım</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-17">17 Mart 2026</time>
-                  <h3>Açık kaynak paket yöneticisi güvenlik denetimini sıkılaştırdı</h3>
-                  <p>İki faktörlü yayın imzası zorunluluğu tartışılıyor; geçiş takvimi paylaşıldı.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="game" data-search="nişancı oyun sezon haritası silah yaması sıralama">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1509199360987-025efeec2898?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-game">Oyun</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-16">16 Mart 2026</time>
-                  <h3>Ünlü nişancı oyununda yeni sezon haritası geldi</h3>
-                  <p>Dengeli silah yamasıyla birlikte sıralama modu sıfırlandı; topluluk önerileri dikkate alındı.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="smart" data-search="matter standardı akıllı ev kapı sensörü termostat uygulama">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-smart">Akıllı ev</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-15">15 Mart 2026</time>
-                  <h3>Matter standardı ile uyumlu cihaz sayısı ikiye katlandı</h3>
-                  <p>Kapı sensörleri ve termostatlar tek uygulamada birleşmeye başladı.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="ai" data-search="görüntü üretim telif filigran platform sanatçı">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1620121692029-d87522477734?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-ai">Yapay zekâ</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-14">14 Mart 2026</time>
-                  <h3>Görüntü üretiminde telif ve filigran zorunluluğu gündemde</h3>
-                  <p>Platformlar otomatik etiketleme deniyor; sanatçı birlikleri ortak bildiri yayınladı.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="retro" data-search="klasik konsol kütüphane lisanslı oyun arşiv çözünürlük">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-retro">Retro</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-13">13 Mart 2026</time>
-                  <h3>Klasik konsol kütüphanesine yeni lisanslı oyunlar eklendi</h3>
-                  <p>Arşiv koleksiyonu genişlerken orijinal çözünürlük ve kare hızı seçenekleri korunuyor.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="mobile" data-search="katlanabilir telefon ekran dayanıklılık laboratuvar test">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-mobile">Mobil</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-12">12 Mart 2026</time>
-                  <h3>Katlanabilir telefonlarda ekran dayanıklılığı test edildi</h3>
-                  <p>Bağımsız laboratuvar sonuçları tüketici raporlarında yayımlandı.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="console" data-search="abonelik ücretsiz oyun kooperatif hikaye">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-console">Konsol</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-11">11 Mart 2026</time>
-                  <h3>Abonelik hizmetinde bu ayın ücretsiz oyunları belli oldu</h3>
-                  <p>Kooperatif ve hikâye odaklı yapımlar listeye dahil edildi.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="hardware" data-search="ssd fiyat nvm express kapasite maliyet">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1597872200969-2b15d88b378d?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-hardware">Donanım</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-10">10 Mart 2026</time>
-                  <h3>SSD fiyatlarında kısmi düşüş gözleniyor</h3>
-                  <p>NVM Express sürücülerde kapasite başına maliyet geçen çeyreğe göre azaldı.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="game" data-search="co-op hayatta kalma biyom düşman hava mevsim">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-game">Oyun</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-09">9 Mart 2026</time>
-                  <h3>Co-op hayatta kalma oyununa biyom güncellemesi</h3>
-                  <p>Yeni düşman türleri ve hava olayları mevsimsel etkinlikle birlikte geldi.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="security" data-search="oyun hesap şifresiz giriş donanım anahtarı doğrulama">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-security">Güvenlik</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-08">8 Mart 2026</time>
-                  <h3>Oyun hesapları için şifresiz giriş yaygınlaşıyor</h3>
-                  <p>Donanım anahtarı ve platform içi doğrulama birlikte kullanılabiliyor.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="indie" data-search="oyun geliştirici buluşma istanbul demo yayıncı">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a720d?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-indie">İndie</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-07">7 Mart 2026</time>
-                  <h3>Yerel oyun geliştirici buluşması İstanbul’da yapıldı</h3>
-                  <p>Demo gününde on beş ekip projelerini anlattı; yayıncılarla B2B görüşmeler düzenlendi.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="pc" data-search="modding topluluk grafik iyileştirme rpg doku ışık">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1538481199708-86ff9c10b76a?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-pc">PC</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-06">6 Mart 2026</time>
-                  <h3>Modding topluluğu grafik iyileştirme paketi yayınladı</h3>
-                  <p>Eski bir RPG için doku ve ışık güncellemesi; resmi olarak onaylandı.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="esport" data-search="mobil moba lig transfer kadro maç">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1511882150382-421056c89033?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-esport">e-Spor</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-05">5 Mart 2026</time>
-                  <h3>Mobil MOBA liginde transfer dönemi kapandı</h3>
-                  <p>Kadro değişiklikleri sonrası ilk maçlar hafta sonu oynanacak.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-          <li class="news-card" data-category="cloud" data-search="yedekleme oyun kaydı senkronizasyon çoklu cihaz beta">
-            <article>
-              <a class="news-card__link" href="#">
-                <figure class="news-card__media">
-                  <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=640&h=360&fit=crop&q=80" alt="" width="640" height="360" loading="lazy" decoding="async" />
-                  <span class="tag tag-cloud">Bulut</span>
-                </figure>
-                <div class="news-card__body">
-                  <time datetime="2026-03-04">4 Mart 2026</time>
-                  <h3>Yedekleme hizmeti oyun kayıtlarını otomatik senkronize edecek</h3>
-                  <p>Çoklu cihaz desteği beta aşamasında; çakışma çözümü kullanıcıya bırakıldı.</p>
-                </div>
-              </a>
-            </article>
-          </li>
-        </ul>
-      </div>
-    </section>
+@media (prefers-reduced-motion: reduce) {
+  .bg-layer::before,
+  .bg-layer::after {
+    animation: none;
+  }
+}
 
-    <section id="hakkinda" class="section">
-      <div class="wrap narrow">
-        <h2>Hakkında</h2>
-        <p>
-          <strong>TeknoHaber</strong>, teknoloji ve oyun gündemini görsel özetler ve kısa haber metinleriyle sunar.
-          İçerikler örnek niteliğindedir; güncel ve doğrulanmış haber için resmi kaynaklara başvurmanız önerilir.
-        </p>
-      </div>
-    </section>
+body {
+  margin: 0;
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  position: relative;
+  z-index: 0;
+}
 
-    <section id="iletisim" class="section section-alt">
-      <div class="wrap narrow">
-        <h2>İletişim</h2>
-        <p class="contact-intro">Sorularınız ve iş birliği için aşağıdaki kanallardan ulaşabilirsiniz.</p>
-        <ul class="contact-list">
-          <li>
-            <span class="contact-list__label">E-posta</span>
-            <a href="mailto:alperavanlieroffical@gmail.com">alperavanlieroffical@gmail.com</a>
-          </li>
-          <li>
-            <span class="contact-list__label">Telefon</span>
-            <a href="tel:+905510631289">+90 551 063 12 89</a>
-          </li>
-          <li>
-            <span class="contact-list__label">WhatsApp</span>
-            <a href="https://wa.me/905510631289" target="_blank" rel="noopener noreferrer">WhatsApp ile yaz</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-  </main>
+h1,
+h2,
+h3,
+.featured-title {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
 
-  <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div class="footer-brand">
-        <strong>TeknoHaber</strong>
-        <p>Teknoloji ve oyun haberleri</p>
-      </div>
-      <div class="footer-contact">
-        <a href="mailto:alperavanlieroffical@gmail.com">alperavanlieroffical@gmail.com</a>
-        <a href="tel:+905510631289">+90 551 063 12 89</a>
-      </div>
-      <p class="footer-copy">© <span id="yil"></span> TeknoHaber. Tüm hakları saklıdır.</p>
-    </div>
-  </footer>
+main,
+.site-header,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
 
-  <button type="button" class="to-top" id="yukari" aria-label="Sayfanın başına dön">↑</button>
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
 
-  <script>
-    document.getElementById("yil").textContent = new Date().getFullYear();
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
 
-    (function setImageAlts() {
-      var fh = document.querySelector(".featured-card__content h2");
-      var fi = document.querySelector(".featured-card__media img");
-      if (fh && fi) fi.alt = fh.textContent.trim();
-      document.querySelectorAll(".news-card").forEach(function (card) {
-        var img = card.querySelector(".news-card__media img");
-        var h = card.querySelector("h3");
-        if (img && h) img.alt = h.textContent.trim();
-      });
-    })();
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
-    (function () {
-      var cards = Array.prototype.slice.call(document.querySelectorAll("#haber-listesi .news-card"));
-      var chips = document.querySelectorAll("#kategori-filtre .chip");
-      var searchMain = document.getElementById("haber-ara");
-      var searchNav = document.getElementById("nav-search");
-      var resultEl = document.getElementById("haber-sonuc");
-      var emptyEl = document.getElementById("haber-bos");
-      var activeFilter = "all";
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--accent);
+  color: var(--bg) !important;
+  font-weight: 600;
+}
 
-      function normalize(s) {
-        return (s || "").toLowerCase().replace(/\s+/g, " ").trim();
-      }
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
 
-      function applyFilters() {
-        var q = normalize(searchMain.value || searchNav.value);
-        var shown = 0;
-        cards.forEach(function (card) {
-          var cat = card.getAttribute("data-category") || "";
-          var hay = normalize(card.getAttribute("data-search") || "");
-          var matchCat = activeFilter === "all" || cat === activeFilter;
-          var matchSearch = !q || hay.indexOf(q) !== -1;
-          var visible = matchCat && matchSearch;
-          card.classList.toggle("hidden", !visible);
-          if (visible) shown++;
-        });
-        resultEl.textContent = shown + " haber gösteriliyor";
-        emptyEl.classList.toggle("hidden", shown !== 0);
-      }
+.wrap {
+  width: min(100% - 2rem, var(--max));
+  margin-inline: auto;
+}
 
-      function setFilter(key) {
-        activeFilter = key;
-        chips.forEach(function (btn) {
-          var isActive = btn.getAttribute("data-filter") === key;
-          btn.classList.toggle("chip--active", isActive);
-        });
-        applyFilters();
-      }
+.narrow {
+  max-width: var(--narrow);
+}
 
-      chips.forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          setFilter(btn.getAttribute("data-filter") || "all");
-        });
-      });
+/* Üst bar */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(10, 11, 14, 0.78);
+  backdrop-filter: blur(16px) saturate(1.2);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
 
-      searchMain.addEventListener("input", function () {
-        if (searchNav.value !== searchMain.value) searchNav.value = searchMain.value;
-        applyFilters();
-      });
-      searchNav.addEventListener("input", function () {
-        if (searchMain.value !== searchNav.value) searchMain.value = searchNav.value;
-        applyFilters();
-      });
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 0;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
 
-      var topBtn = document.getElementById("yukari");
-      function toggleTop() {
-        topBtn.classList.toggle("to-top--visible", window.scrollY > 400);
-      }
-      window.addEventListener("scroll", toggleTop, { passive: true });
-      toggleTop();
-      topBtn.addEventListener("click", function () {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    })();
-  </script>
-</body>
-</html>
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 1rem 1.25rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex: 1;
+  min-width: min(100%, 280px);
+}
+
+.header-search {
+  flex: 1;
+  min-width: 160px;
+  max-width: 220px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logo:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: var(--text);
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem 0.85rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--muted);
+  opacity: 0.85;
+}
+
+.search-input:focus {
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+}
+
+.search-input--nav {
+  max-width: 100%;
+}
+
+/* Özet şeridi */
+.stats-strip {
+  padding: clamp(1.25rem, 4vw, 2rem) 0;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+}
+
+.stats-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.stat-card {
+  padding: 1.1rem 1.15rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(15, 17, 22, 0.65);
+  backdrop-filter: blur(8px);
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.stat-card:hover {
+  border-color: rgba(94, 207, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.stat-card__value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.stat-card__label {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.stat-card--cta {
+  text-align: left;
+  grid-column: span 1;
+}
+
+@media (min-width: 720px) {
+  .stat-card--cta {
+    grid-column: span 2;
+  }
+}
+
+.stat-card__link {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--accent) !important;
+  text-decoration: none !important;
+}
+
+.stat-card__link:hover {
+  color: var(--accent-hover) !important;
+}
+
+.stat-card__hint {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Hero */
+.hero {
+  padding: clamp(2.5rem, 7vw, 4.25rem) 0;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% -30%, rgba(94, 207, 255, 0.12), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(255, 255, 255, 0.04), transparent 50%),
+    transparent;
+}
+
+.hero-inner {
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.85rem, 5vw, 2.75rem);
+  line-height: 1.15;
+  font-weight: 700;
+  text-shadow: 0 1px 40px rgba(0, 0, 0, 0.45);
+}
+
+.lead {
+  margin: 0 auto 1.75rem;
+  max-width: 36rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(135deg, var(--accent) 0%, #3db8e8 100%);
+  color: #061018 !important;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none !important;
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+  box-shadow: 0 8px 28px rgba(94, 207, 255, 0.22);
+}
+
+.btn:hover {
+  filter: brightness(1.08);
+  text-decoration: none !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(94, 207, 255, 0.28);
+}
+
+/* Öne çıkan */
+.section-tight {
+  padding: 0 0 clamp(2rem, 5vw, 3rem);
+}
+
+.featured-wrap {
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.02) 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.featured-title {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.featured-card {
+  border-radius: calc(var(--radius) + 6px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(12, 14, 18, 0.85);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.featured-card__link {
+  display: grid;
+  grid-template-columns: 1fr;
+  color: inherit;
+  text-decoration: none !important;
+}
+
+@media (min-width: 800px) {
+  .featured-card__link {
+    grid-template-columns: 1.15fr 1fr;
+    min-height: 280px;
+  }
+}
+
+.featured-card__media {
+  margin: 0;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+
+@media (min-width: 800px) {
+  .featured-card__media {
+    aspect-ratio: auto;
+    min-height: 100%;
+  }
+}
+
+.featured-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.featured-card:hover .featured-card__media img {
+  transform: scale(1.03);
+}
+
+.featured-card__content {
+  padding: 1.5rem 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.featured-card__content time {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.featured-card__content h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 3vw, 1.65rem);
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.featured-card__content p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.featured-card__cta {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--accent);
+}
+
+.featured-card:hover .featured-card__cta {
+  text-decoration: underline;
+}
+
+/* Bölümler */
+.section {
+  padding: clamp(2.5rem, 6vw, 4rem) 0;
+}
+
+.section-alt {
+  background: rgba(16, 18, 24, 0.5);
+  border-block: 1px solid var(--border);
+  backdrop-filter: blur(6px);
+}
+
+.section h2 {
+  margin: 0 0 1.25rem;
+  font-size: 1.5rem;
+}
+
+.section p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.section .narrow p + p {
+  margin-top: 1rem;
+}
+
+/* Haber araç çubuğu */
+.section-head {
+  margin-bottom: 1.25rem;
+}
+
+.section-head h2 {
+  margin: 0 0 0.35rem;
+}
+
+.section-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.news-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.search-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  max-width: 420px;
+}
+
+.search-field__label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.chip {
+  padding: 0.4rem 0.75rem;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.chip:hover {
+  color: var(--text);
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.chip--active {
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.chip--active:hover {
+  color: var(--bg);
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.news-result {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.news-empty {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--muted);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Haber grid */
+.news-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+}
+
+.news-card {
+  transition: opacity 0.2s;
+}
+
+.news-card article {
+  height: 100%;
+}
+
+.news-card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: rgba(11, 13, 17, 0.88);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none !important;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.news-card__link:hover {
+  border-color: rgba(94, 207, 255, 0.35);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  transform: translateY(-3px);
+}
+
+.news-card__media {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+
+.news-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.news-card:hover .news-card__media img {
+  transform: scale(1.05);
+}
+
+.news-card__media .tag {
+  position: absolute;
+  left: 0.65rem;
+  top: 0.65rem;
+  z-index: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.news-card__body {
+  padding: 1rem 1.15rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.news-card__body time {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.news-card__body h3 {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.35;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.news-card__link:hover .news-card__body h3 {
+  color: var(--accent);
+}
+
+.news-card__body p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 6px;
+}
+
+.tag-ai {
+  background: rgba(139, 92, 246, 0.35);
+  color: #e9d5ff;
+}
+
+.tag-game {
+  background: rgba(34, 197, 94, 0.28);
+  color: #bbf7d0;
+}
+
+.tag-hardware {
+  background: rgba(249, 115, 22, 0.28);
+  color: #fed7aa;
+}
+
+.tag-console {
+  background: rgba(236, 72, 153, 0.3);
+  color: #fce7f3;
+}
+
+.tag-mobile {
+  background: rgba(59, 130, 246, 0.32);
+  color: #dbeafe;
+}
+
+.tag-security {
+  background: rgba(239, 68, 68, 0.28);
+  color: #fecaca;
+}
+
+.tag-esport {
+  background: rgba(234, 179, 8, 0.28);
+  color: #fef08a;
+}
+
+.tag-vr {
+  background: rgba(6, 182, 212, 0.3);
+  color: #cffafe;
+}
+
+.tag-indie {
+  background: rgba(168, 85, 247, 0.28);
+  color: #f3e8ff;
+}
+
+.tag-cloud {
+  background: rgba(100, 116, 139, 0.45);
+  color: #f1f5f9;
+}
+
+.tag-pc {
+  background: rgba(20, 184, 166, 0.28);
+  color: #ccfbf1;
+}
+
+.tag-software {
+  background: rgba(99, 102, 241, 0.32);
+  color: #e0e7ff;
+}
+
+.tag-smart {
+  background: rgba(14, 165, 233, 0.28);
+  color: #e0f2fe;
+}
+
+.tag-retro {
+  background: rgba(161, 98, 7, 0.35);
+  color: #fef3c7;
+}
+
+/* İletişim */
+.contact-intro {
+  margin-bottom: 1.25rem !important;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.contact-list li {
+  padding: 1rem 1.15rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.contact-list__label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact-list a {
+  font-size: 1.05rem;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+/* Footer */
+.site-footer {
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.footer-grid {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (min-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+  }
+
+  .footer-copy {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 0;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border);
+  }
+}
+
+.footer-brand strong {
+  display: block;
+  color: var(--text);
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.footer-brand p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.footer-contact a {
+  font-weight: 600;
+}
+
+.footer-copy {
+  margin: 0;
+}
+
+/* Yukarı çık */
+.to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 40;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--bg);
+  background: var(--accent);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.2s, visibility 0.2s, transform 0.2s, background 0.15s;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.to-top--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.to-top:hover {
+  background: var(--accent-hover);
+}
+
+.to-top:focus-visible {
+  outline: 2px solid var(--accent-hover);
+  outline-offset: 3px;
+}
