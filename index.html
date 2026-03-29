@@ -14,6 +14,30 @@
   <div class="bg-layer" aria-hidden="true"></div>
   <a class="skip-link" href="#haberler">Haberlere atla</a>
 
+  <!-- Economy Bar -->
+  <div class="economy-bar">
+    <div class="wrap economy-bar__content">
+      <div class="economy-item">
+        <span class="economy-icon">$</span>
+        <span class="economy-label">USD/TRY</span>
+        <span class="economy-value" id="dolar-rate">32.45</span>
+        <span class="economy-change economy-change--up">+0.82%</span>
+      </div>
+      <div class="economy-item">
+        <span class="economy-icon">€</span>
+        <span class="economy-label">EUR/TRY</span>
+        <span class="economy-value" id="euro-rate">35.12</span>
+        <span class="economy-change economy-change--down">-0.45%</span>
+      </div>
+      <div class="economy-item">
+        <span class="economy-icon">₿</span>
+        <span class="economy-label">BTC/USD</span>
+        <span class="economy-value" id="btc-rate">67,234</span>
+        <span class="economy-change economy-change--up">+3.24%</span>
+      </div>
+    </div>
+  </div>
+
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="logo" href="#">TeknoHaber</a>
@@ -39,6 +63,68 @@
   </header>
 
   <main>
+    <!-- Hero Slider Section -->
+    <section class="hero-slider">
+      <div class="hero-slider__container">
+        <div class="hero-slide hero-slide--active">
+          <div class="hero-slide__image">
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1200&h=600&fit=crop&auto=format" alt="Büyük dil modellerinde bağlam penceresi genişliyor" />
+          </div>
+          <div class="hero-slide__content">
+            <span class="hero-slide__tag">Yapay Zekâ</span>
+            <h2 class="hero-slide__title">Büyük Dil Modellerinde Bağlam Penceresi Genişliyor</h2>
+            <p class="hero-slide__desc">Uzun dokümanları tek seferde işleyebilen yeni mimariler, araştırma ve üretkenlik araçlarında tartışma başlattı.</p>
+            <a href="#haber-1" class="hero-slide__cta">Hemen Oku</a>
+          </div>
+        </div>
+        
+        <div class="hero-slide">
+          <div class="hero-slide__image">
+            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726a?w=1200&h=600&fit=crop&auto=format" alt="Grafik kartı piyasasında orta segment yenileniyor" />
+          </div>
+          <div class="hero-slide__content">
+            <span class="hero-slide__tag">Donanım</span>
+            <h2 class="hero-slide__title">Grafik Kartı Piyasasında Orta Segment Yenileniyor</h2>
+            <p class="hero-slide__desc">1080p ve 1440p oyunlarda güç tüketimi ile performans dengesi yeni kartlarda öncelik haline geldi.</p>
+            <a href="#haber-3" class="hero-slide__cta">Hemen Oku</a>
+          </div>
+        </div>
+        
+        <div class="hero-slide">
+          <div class="hero-slide__image">
+            <img src="https://images.unsplash.com/photo-1511512528066-fd1ba0e8c9a7?w=1200&h=600&fit=crop&auto=format" alt="Açık dünya RPG'sinde mod desteği resmileşti" />
+          </div>
+          <div class="hero-slide__content">
+            <span class="hero-slide__tag">Oyun</span>
+            <h2 class="hero-slide__title">Açık Dünya RPG'sinde Mod Desteği Resmileşti</h2>
+            <p class="hero-slide__desc">Topluluk içerikleri resmi araçlarla mağazaya taşınabilecek; çeviri ve düzenleme paketleri öne çıkıyor.</p>
+            <a href="#haber-2" class="hero-slide__cta">Hemen Oku</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slider Controls -->
+      <div class="hero-slider__controls">
+        <button class="hero-slider__nav hero-slider__nav--prev" id="hero-prev" aria-label="Önceki haber">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="hero-slider__nav hero-slider__nav--next" id="hero-next" aria-label="Sonraki haber">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Slider Indicators -->
+      <div class="hero-slider__indicators">
+        <button class="hero-slider__indicator hero-slider__indicator--active" data-slide="0" aria-label="1. habere git"></button>
+        <button class="hero-slider__indicator" data-slide="1" aria-label="2. habere git"></button>
+        <button class="hero-slider__indicator" data-slide="2" aria-label="3. habere git"></button>
+      </div>
+    </section>
+
     <section class="hero">
       <div class="wrap hero-inner">
         <p class="eyebrow">Güncel</p>
@@ -68,6 +154,106 @@
         <div class="stat-card stat-card--cta">
           <a class="stat-card__link" href="#haberler">Tüm listeyi aç →</a>
           <span class="stat-card__hint">Arama ve filtre ile süzün</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Reviews Section -->
+    <section id="urunler" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>En Yeni Ürün İncelemeleri</h2>
+          <p class="section-desc">Teknoloji dünyasının en çok konuşulan ürünleri ve puanları</p>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="product-card__image">
+              <img src="https://images.unsplash.com/photo-1592899677977-9c10ca568e73?w=300&h=300&fit=crop&auto=format" alt="iPhone 15 Pro" />
+              <div class="product-card__rating">
+                <span class="rating-score">9.2</span>
+                <div class="rating-stars">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+              </div>
+            </div>
+            <div class="product-card__content">
+              <h3>iPhone 15 Pro</h3>
+              <p class="product-category">Akıllı Telefon</p>
+              <div class="product-price">$999</div>
+              <a href="#" class="product-card__cta">İncele</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__image">
+              <img src="https://images.unsplash.com/photo-1598928506314-c3eda2dbd0a9?w=300&h=300&fit=crop&auto=format" alt="RTX 4080" />
+              <div class="product-card__rating">
+                <span class="rating-score">8.8</span>
+                <div class="rating-stars">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+            </div>
+            <div class="product-card__content">
+              <h3>NVIDIA RTX 4080</h3>
+              <p class="product-category">Ekran Kartı</p>
+              <div class="product-price">$1,299</div>
+              <a href="#" class="product-card__cta">İncele</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__image">
+              <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&h=300&fit=crop&auto=format" alt="MacBook Pro M3" />
+              <div class="product-card__rating">
+                <span class="rating-score">9.5</span>
+                <div class="rating-stars">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+              </div>
+            </div>
+            <div class="product-card__content">
+              <h3>MacBook Pro M3</h3>
+              <p class="product-category">Laptop</p>
+              <div class="product-price">$1,999</div>
+              <a href="#" class="product-card__cta">İncele</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__image">
+              <img src="https://images.unsplash.com/photo-1541807085-5ae52b2b8c2e?w=300&h=300&fit=crop&auto=format" alt="PlayStation 5" />
+              <div class="product-card__rating">
+                <span class="rating-score">8.5</span>
+                <div class="rating-stars">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+            </div>
+            <div class="product-card__content">
+              <h3>PlayStation 5</h3>
+              <p class="product-category">Oyun Konsolu</p>
+              <div class="product-price">$499</div>
+              <a href="#" class="product-card__cta">İncele</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -140,7 +326,7 @@
             <article>
               <a class="news-card__link" href="#">
                 <figure class="news-card__media">
-                  <img src="https://picsum.photos/seed/teknohaber-01/640/360?grayscale" alt="" width="640" height="360" loading="lazy" decoding="async" />
+                  <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e29d?w=640&h=360&fit=crop&auto=format" alt="Büyük dil modellerinde bağlam penceresi genişliyor" width="640" height="360" loading="lazy" decoding="async" />
                   <span class="tag tag-ai">Yapay zekâ</span>
                 </figure>
                 <div class="news-card__body">
@@ -156,7 +342,7 @@
             <article>
               <a class="news-card__link" href="#">
                 <figure class="news-card__media">
-                  <img src="https://picsum.photos/seed/teknohaber-02/640/360?grayscale" alt="" width="640" height="360" loading="lazy" decoding="async" />
+                  <img src="https://images.unsplash.com/photo-1550438177-6d3f5d0b3b5?w=640&h=360&fit=crop&auto=format" alt="Açık dünya RPG'sinde mod desteği resmileşti" width="640" height="360" loading="lazy" decoding="async" />
                   <span class="tag tag-game">Oyun</span>
                 </figure>
                 <div class="news-card__body">
@@ -172,7 +358,7 @@
             <article>
               <a class="news-card__link" href="#">
                 <figure class="news-card__media">
-                  <img src="https://picsum.photos/seed/teknohaber-03/640/360?grayscale" alt="" width="640" height="360" loading="lazy" decoding="async" />
+                  <img src="https://images.unsplash.com/photo-1517248135767-6145bd0c9ff?w=640&h=360&fit=crop&auto=format" alt="Grafik kartı piyasasında orta segment yenileniyor" width="640" height="360" loading="lazy" decoding="async" />
                   <span class="tag tag-hardware">Donanım</span>
                 </figure>
                 <div class="news-card__body">
@@ -188,7 +374,7 @@
             <article>
               <a class="news-card__link" href="#">
                 <figure class="news-card__media">
-                  <img src="https://picsum.photos/seed/teknohaber-04/640/360?grayscale" alt="" width="640" height="360" loading="lazy" decoding="async" />
+                  <img src="https://images.unsplash.com/photo-1592899677977-9c10ca568e73?w=640&h=360&fit=crop&auto=format" alt="El konsolunda pil ömrü güncellemesi yayınlandı" width="640" height="360" loading="lazy" decoding="async" />
                   <span class="tag tag-console">Konsol</span>
                 </figure>
                 <div class="news-card__body">
@@ -204,7 +390,7 @@
             <article>
               <a class="news-card__link" href="#">
                 <figure class="news-card__media">
-                  <img src="https://picsum.photos/seed/teknohaber-05/640/360?grayscale" alt="" width="640" height="360" loading="lazy" decoding="async" />
+                  <img src="https://images.unsplash.com/photo-1555241206-5ca7218b8b5?w=640&h=360&fit=crop&auto=format" alt="Üç büyük mağaza uygulama gizlilik etiketlerini sıkılaştırdı" width="640" height="360" loading="lazy" decoding="async" />
                   <span class="tag tag-mobile">Mobil</span>
                 </figure>
                 <div class="news-card__body">
@@ -572,6 +758,77 @@
       </div>
     </section>
 
+    <!-- Newsletter Subscription Section -->
+    <section id="bulten" class="section section-alt">
+      <div class="wrap narrow">
+        <div class="newsletter">
+          <div class="newsletter__content">
+            <h2>Beni Takip Edin</h2>
+            <p class="newsletter__desc">Teknoloji ve oyun dünyasından en güncel haberler doğrudan e-posta kutunuzda. Haftalık özetler ve özel içerikler kaçırmayın.</p>
+            
+            <form class="newsletter__form" id="newsletter-form">
+              <div class="newsletter__input-group">
+                <input 
+                  type="email" 
+                  id="newsletter-email" 
+                  class="newsletter__input" 
+                  placeholder="E-posta adresiniz..." 
+                  required 
+                  aria-label="E-posta adresiniz"
+                />
+                <button type="submit" class="newsletter__btn">
+                  <span class="newsletter__btn-text">Abone Ol</span>
+                  <div class="newsletter__btn-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 2L11 13L2 22m0-20l11 11L22 2m-11 0v11"/>
+                    </svg>
+                  </div>
+                </button>
+              </div>
+              <p class="newsletter__privacy">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 11 5.16 0 9-5.45 9-11V5l-9-4z"/>
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 11 5.16 0 9-5.45 9-11V5l-9-4z"/>
+                </svg>
+                Gizliliğinizi önemsiyoruz. E-posta adresiniz hiçbir zaman üçüncü şahıslarla paylaşılmayacaktır.
+              </p>
+            </form>
+          </div>
+          
+          <div class="newsletter__visual">
+            <div class="newsletter__stats">
+              <div class="newsletter__stat">
+                <span class="newsletter__stat-number">15,234</span>
+                <span class="newsletter__stat-label">Abone</span>
+              </div>
+              <div class="newsletter__stat">
+                <span class="newsletter__stat-number">98%</span>
+                <span class="newsletter__stat-label">Memnuniyet</span>
+              </div>
+            </div>
+            <div class="newsletter__benefits">
+              <div class="benefit-item">
+                <span class="benefit-icon">📧</span>
+                <span>Haftalık Özet</span>
+              </div>
+              <div class="benefit-item">
+                <span class="benefit-icon">🎯</span>
+                <span>Kişiselleştirilmiş İçerik</span>
+              </div>
+              <div class="benefit-item">
+                <span class="benefit-icon">🚀</span>
+                <span>Önce Erişim</span>
+              </div>
+              <div class="benefit-item">
+                <span class="benefit-icon">🎁</span>
+                <span>Özel Teklifler</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="hakkinda" class="section">
       <div class="wrap narrow">
         <h2>Hakkında</h2>
@@ -649,6 +906,183 @@
 
   <script>
     document.getElementById("yil").textContent = new Date().getFullYear();
+
+    // Hero Slider Functionality
+    (function initHeroSlider() {
+      const slides = document.querySelectorAll('.hero-slide');
+      const indicators = document.querySelectorAll('.hero-slider__indicator');
+      const prevBtn = document.getElementById('hero-prev');
+      const nextBtn = document.getElementById('hero-next');
+      let currentSlide = 0;
+      let slideInterval;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('hero-slide--active', i === index);
+        });
+        
+        indicators.forEach((indicator, i) => {
+          indicator.classList.toggle('hero-slider__indicator--active', i === index);
+        });
+        
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        const nextIndex = (currentSlide + 1) % slides.length;
+        showSlide(nextIndex);
+      }
+
+      function prevSlide() {
+        const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prevIndex);
+      }
+
+      function startAutoSlide() {
+        slideInterval = setInterval(nextSlide, 5000);
+      }
+
+      function stopAutoSlide() {
+        clearInterval(slideInterval);
+      }
+
+      // Event listeners
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        stopAutoSlide();
+        startAutoSlide();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        stopAutoSlide();
+        startAutoSlide();
+      });
+
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          showSlide(index);
+          stopAutoSlide();
+          startAutoSlide();
+        });
+      });
+
+      // Start auto-slide
+      startAutoSlide();
+
+      // Pause on hover
+      const sliderContainer = document.querySelector('.hero-slider__container');
+      sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+      sliderContainer.addEventListener('mouseleave', startAutoSlide);
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          prevSlide();
+          stopAutoSlide();
+          startAutoSlide();
+        } else if (e.key === 'ArrowRight') {
+          nextSlide();
+          stopAutoSlide();
+          startAutoSlide();
+        }
+      });
+    })();
+
+    // Economy Bar Updates
+    (function updateEconomyRates() {
+      const dolarRate = document.getElementById('dolar-rate');
+      const euroRate = document.getElementById('euro-rate');
+      const btcRate = document.getElementById('btc-rate');
+      
+      // Simulate real-time updates
+      function updateRates() {
+        if (dolarRate) {
+          const dolar = (31 + Math.random() * 3).toFixed(2);
+          const dolarChange = (Math.random() * 2 - 1).toFixed(2);
+          dolarRate.textContent = dolar;
+          
+          const dolarChangeEl = dolarRate.nextElementSibling;
+          if (dolarChangeEl) {
+            dolarChangeEl.textContent = `${dolarChange > 0 ? '+' : ''}${dolarChange}%`;
+            dolarChangeEl.className = `economy-change ${dolarChange > 0 ? 'economy-change--up' : 'economy-change--down'}`;
+          }
+        }
+        
+        if (euroRate) {
+          const euro = (34 + Math.random() * 3).toFixed(2);
+          const euroChange = (Math.random() * 2 - 1).toFixed(2);
+          euroRate.textContent = euro;
+          
+          const euroChangeEl = euroRate.nextElementSibling;
+          if (euroChangeEl) {
+            euroChangeEl.textContent = `${euroChange > 0 ? '+' : ''}${euroChange}%`;
+            euroChangeEl.className = `economy-change ${euroChange > 0 ? 'economy-change--up' : 'economy-change--down'}`;
+          }
+        }
+        
+        if (btcRate) {
+          const btc = (65000 + Math.random() * 5000).toFixed(0);
+          const btcChange = (Math.random() * 5 - 2.5).toFixed(2);
+          btcRate.textContent = Number(btc).toLocaleString();
+          
+          const btcChangeEl = btcRate.nextElementSibling;
+          if (btcChangeEl) {
+            btcChangeEl.textContent = `${btcChange > 0 ? '+' : ''}${btcChange}%`;
+            btcChangeEl.className = `economy-change ${btcChange > 0 ? 'economy-change--up' : 'economy-change--down'}`;
+          }
+        }
+      }
+      
+      // Update every 5 seconds
+      updateRates();
+      setInterval(updateRates, 5000);
+    })();
+
+    // Newsletter Form Functionality
+    (function initNewsletter() {
+      const form = document.getElementById('newsletter-form');
+      const emailInput = document.getElementById('newsletter-email');
+      
+      if (form && emailInput) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const email = emailInput.value.trim();
+          
+          if (!email) {
+            alert('Lütfen geçerli bir e-posta adresi girin.');
+            return;
+          }
+          
+          if (!email.includes('@') || !email.includes('.')) {
+            alert('Lütfen geçerli bir e-posta adresi girin.');
+            return;
+          }
+          
+          // Simulate subscription
+          const btn = form.querySelector('.newsletter__btn');
+          const btnText = btn.querySelector('.newsletter__btn-text');
+          const originalText = btnText.textContent;
+          
+          btnText.textContent = 'Abone Olunuyor...';
+          btn.disabled = true;
+          
+          setTimeout(() => {
+            btnText.textContent = 'Başarılı! ✓';
+            btn.style.background = 'linear-gradient(135deg, #00ff88 0%, #00cc70 100%)';
+            
+            setTimeout(() => {
+              btnText.textContent = originalText;
+              btn.disabled = false;
+              btn.style.background = '';
+              emailInput.value = '';
+              alert('Teşekkürler! Bültenimize başarıyla abone oldunuz.');
+            }, 2000);
+          }, 1500);
+        });
+      }
+    })();
 
     // Mobile menu toggle
     const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
