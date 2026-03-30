@@ -1505,6 +1505,246 @@ button {
   display: none !important;
 }
 
+.logo {
+  gap: 12px;
+}
+
+.logo-mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.logo-mark::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 20px;
+  background: radial-gradient(circle, rgba(93, 226, 255, 0.22), transparent 65%);
+  z-index: -1;
+}
+
+.logo-copy {
+  display: grid;
+  gap: 2px;
+}
+
+.logo-sub {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.hero-slide__eyebrow,
+.featured-card__lead,
+.news-card__eyebrow,
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  color: var(--text-soft);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-slide__eyebrow::before,
+.featured-card__lead::before,
+.news-card__eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.hero-slide__image::after {
+  background:
+    linear-gradient(90deg, rgba(4, 8, 18, 0.15), rgba(4, 8, 18, 0.7)),
+    linear-gradient(180deg, transparent 0%, rgba(4, 8, 18, 0.32) 100%);
+}
+
+.hero-slide__content {
+  gap: 16px;
+}
+
+.featured-title {
+  margin: 0 0 20px;
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.featured-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-card__media {
+  position: relative;
+}
+
+.featured-card__media::after,
+.news-card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(7, 15, 29, 0.18) 55%, rgba(7, 15, 29, 0.82) 100%);
+  pointer-events: none;
+}
+
+.featured-card__spot,
+.news-card__index {
+  position: absolute;
+  z-index: 2;
+  top: 18px;
+  left: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 46px;
+  min-height: 34px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(6, 17, 31, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--text);
+  font-weight: 700;
+  backdrop-filter: blur(14px);
+}
+
+.featured-card__spot {
+  top: auto;
+  bottom: 22px;
+  left: 22px;
+  min-width: 0;
+  color: var(--accent);
+}
+
+.featured-card__content {
+  gap: 16px;
+  padding: clamp(28px, 4vw, 48px);
+}
+
+.section-head--stacked {
+  align-items: start;
+}
+
+.section-badge {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.news-card {
+  border: 1px solid rgba(109, 153, 255, 0.18);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 40%),
+    rgba(9, 17, 31, 0.9);
+  box-shadow: 0 24px 54px rgba(1, 8, 20, 0.22);
+}
+
+.news-card__link {
+  grid-template-rows: 240px 1fr;
+}
+
+.news-card__media {
+  position: relative;
+  overflow: hidden;
+}
+
+.news-card__media img,
+.featured-card__media img,
+.hero-slide__image img {
+  transform: scale(1.01);
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.news-card:hover .news-card__media img,
+.featured-card:hover .featured-card__media img,
+.hero-slide:hover .hero-slide__image img {
+  transform: scale(1.06);
+  filter: saturate(1.08);
+}
+
+.news-card .tag,
+.featured-card .tag {
+  position: absolute;
+  z-index: 2;
+  right: 18px;
+  bottom: 18px;
+  backdrop-filter: blur(14px);
+}
+
+.news-card__body {
+  gap: 14px;
+  padding: 22px;
+}
+
+.news-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.news-card__body h3 {
+  font-size: 1.3rem;
+  line-height: 1.24;
+  text-wrap: balance;
+}
+
+.news-card__body p {
+  color: var(--text-soft);
+}
+
+.news-card__cta,
+.featured-card__cta {
+  padding-top: 4px;
+}
+
+.tag-mobile,
+.tag-console {
+  background: rgba(112, 155, 255, 0.18);
+  color: #b7cbff;
+}
+
+.tag-software,
+.tag-cloud {
+  background: rgba(102, 225, 188, 0.16);
+  color: #7ff1cf;
+}
+
+.tag-game {
+  background: rgba(255, 133, 92, 0.16);
+  color: #ffb18c;
+}
+
+.tag-security {
+  background: rgba(255, 209, 102, 0.16);
+  color: #ffd978;
+}
+
+@media (max-width: 860px) {
+  .logo-sub {
+    display: none;
+  }
+
+  .section-head--stacked {
+    display: grid;
+    gap: 14px;
+  }
+}
+
 @media (max-width: 1080px) {
   .featured-card__link,
   .newsletter,
