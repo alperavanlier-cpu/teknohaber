@@ -82,25 +82,27 @@
 
     <div class="wrap header-inner">
 
-      <a class="logo" href="#">
-        <svg class="logo-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Arka plan daire -->
-          <circle cx="20" cy="20" r="18" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>
-          
-          <!-- T harfi - teknoloji temalÄ± -->
-          <path d="M12 10h16v2h-16v-2z" fill="var(--accent)"/>
-          <path d="M12 14h16v2h-16v-2z" fill="var(--accent)"/>
-          <path d="M12 18h10v2h-10v-2z" fill="var(--accent)"/>
-          
-          <!-- Ä°konik teknoloji sembolleri -->
-          <circle cx="15" cy="25" r="1.5" fill="var(--accent)" opacity="0.8"/>
-          <circle cx="25" cy="25" r="1.5" fill="var(--accent)" opacity="0.8"/>
-          
-          <!-- Parlama efektleri -->
-          <path d="M20 8l1-2l1 2" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-          <path d="M20 8l-1-2l-1 2" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-        </svg>
-        <span class="logo-text">TeknoHaber</span>
+      <a class="logo" href="#haberler" aria-label="TeknoHaber home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg class="logo-icon" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoGradient" x1="6" y1="6" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#5DE2FF"/>
+                <stop offset="1" stop-color="#7CFFB2"/>
+              </linearGradient>
+            </defs>
+            <rect x="3" y="3" width="40" height="40" rx="16" fill="rgba(8,16,30,0.92)" stroke="url(#logoGradient)" stroke-width="2"/>
+            <path d="M14 15H32" stroke="url(#logoGradient)" stroke-width="2.6" stroke-linecap="round"/>
+            <path d="M23 15V31" stroke="url(#logoGradient)" stroke-width="2.6" stroke-linecap="round"/>
+            <path d="M16 23H30" stroke="url(#logoGradient)" stroke-width="2.6" stroke-linecap="round" opacity="0.95"/>
+            <circle cx="16" cy="31" r="2.1" fill="#5DE2FF"/>
+            <circle cx="30" cy="31" r="2.1" fill="#7CFFB2"/>
+          </svg>
+        </span>
+        <span class="logo-copy">
+          <span class="logo-text">TeknoHaber</span>
+          <span class="logo-sub">Live / Tech Briefing</span>
+        </span>
       </a>
 
       <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menüyü aç/kapat">
@@ -164,123 +166,57 @@
     <!-- Hero Slider Section -->
 
     <section class="hero-slider">
-
       <div class="hero-slider__container">
-
         <div class="hero-slide hero-slide--active">
-
           <div class="hero-slide__image">
-
-            <img src="https://picsum.photos/seed/teknohaber-img-1/1200/800" alt="Büyük dil modellerinde bağlam penceresi genişliyor" />
-
+            <img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?w=1400&h=900&fit=crop&auto=format" alt="Apple launches MacBook Neo and iPhone 17e worldwide" />
           </div>
-
           <div class="hero-slide__content">
-
-            <span class="hero-slide__tag">Yapay ZekÃ¢</span>
-
-            <h2 class="hero-slide__title">Büyük Dil Modellerinde Bağlam Penceresi Genişliyor</h2>
-
-            <p class="hero-slide__desc">Uzun dokümanları tek seferde işleyebilen yeni mimariler, araştırma ve üretkenlik araçlarında tartışma başlattı.</p>
-
-            <a href="#haber-1" class="hero-slide__cta">Hemen Oku</a>
-
+            <span class="hero-slide__tag">Mobil</span>
+            <p class="hero-slide__eyebrow">Apple / Devices</p>
+            <h2 class="hero-slide__title">Apple launches MacBook Neo and iPhone 17e worldwide</h2>
+            <p class="hero-slide__desc">Apple moved its new iPhone, iPad Air M4 and M5 Mac lineup into stores with a broader price spread.</p>
+            <a href="#haber-1" class="hero-slide__cta">Open story</a>
           </div>
-
         </div>
-
-        
-
         <div class="hero-slide">
-
           <div class="hero-slide__image">
-
-            <img src="https://picsum.photos/seed/teknohaber-img-2/1200/800" alt="Grafik kartı piyasasında orta segment yenileniyor" />
-
+            <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?w=1400&h=900&fit=crop&auto=format" alt="Google pushes Gemini deeper into daily productivity flows" />
           </div>
-
           <div class="hero-slide__content">
-
-            <span class="hero-slide__tag">Donanım</span>
-
-            <h2 class="hero-slide__title">Grafik Kartı Piyasasında Orta Segment Yenileniyor</h2>
-
-            <p class="hero-slide__desc">1080p ve 1440p oyunlarda güç tüketimi ile performans dengesi yeni kartlarda öncelik haline geldi.</p>
-
-            <a href="#haber-3" class="hero-slide__cta">Hemen Oku</a>
-
+            <span class="hero-slide__tag">Software</span>
+            <p class="hero-slide__eyebrow">Google / Workspace AI</p>
+            <h2 class="hero-slide__title">Google pushes Gemini deeper into daily productivity flows</h2>
+            <p class="hero-slide__desc">Docs, Sheets and meeting summaries now put AI writing, revision and context tools closer to the main workflow.</p>
+            <a href="#haber-2" class="hero-slide__cta">Open story</a>
           </div>
-
         </div>
-
-        
-
         <div class="hero-slide">
-
           <div class="hero-slide__image">
-
-            <img src="https://picsum.photos/seed/teknohaber-img-3/1200/800" alt="Açık dünya RPG'sinde mod desteği resmileşti" />
-
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&h=900&fit=crop&auto=format" alt="Meta and AMD announce a long-term AI infrastructure deal" />
           </div>
-
           <div class="hero-slide__content">
-
-            <span class="hero-slide__tag">Oyun</span>
-
-            <h2 class="hero-slide__title">Açık Dünya RPG'sinde Mod Desteği Resmileşti</h2>
-
-            <p class="hero-slide__desc">Topluluk içerikleri resmi araçlarla mağazaya taşınabilecek; çeviri ve düzenleme paketleri öne çıkıyor.</p>
-
-            <a href="#haber-2" class="hero-slide__cta">Hemen Oku</a>
-
+            <span class="hero-slide__tag">AI</span>
+            <p class="hero-slide__eyebrow">Meta / Data Center</p>
+            <h2 class="hero-slide__title">Meta and AMD announce a long-term AI infrastructure deal</h2>
+            <p class="hero-slide__desc">Meta is locking major AMD Instinct capacity into its roadmap as compute planning becomes central to the AI race.</p>
+            <a href="#haber-3" class="hero-slide__cta">Open story</a>
           </div>
-
         </div>
-
       </div>
-
-      
-
-      <!-- Slider Controls -->
-
       <div class="hero-slider__controls">
-
-        <button class="hero-slider__nav hero-slider__nav--prev" id="hero-prev" aria-label="Önceki haber">
-
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-
-            <path d="M15 18l-6-6 6-6"/>
-
-          </svg>
-
+        <button class="hero-slider__nav hero-slider__nav--prev" id="hero-prev" aria-label="Previous story">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
         </button>
-
-        <button class="hero-slider__nav hero-slider__nav--next" id="hero-next" aria-label="Sonraki haber">
-
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-
-            <path d="M9 18l6-6-6-6"/>
-
-          </svg>
-
+        <button class="hero-slider__nav hero-slider__nav--next" id="hero-next" aria-label="Next story">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
         </button>
-
       </div>
-
-      
-
-      <!-- Slider Indicators -->
-
       <div class="hero-slider__indicators">
-
-        <button class="hero-slider__indicator hero-slider__indicator--active" data-slide="0" aria-label="1. habere git"></button>
-
-        <button class="hero-slider__indicator" data-slide="1" aria-label="2. habere git"></button>
-
-        <button class="hero-slider__indicator" data-slide="2" aria-label="3. habere git"></button>
-
+        <button class="hero-slider__indicator hero-slider__indicator--active" data-slide="0" aria-label="Go to story 1"></button>
+        <button class="hero-slider__indicator" data-slide="1" aria-label="Go to story 2"></button>
+        <button class="hero-slider__indicator" data-slide="2" aria-label="Go to story 3"></button>
       </div>
-
     </section>
 
 
@@ -295,9 +231,9 @@
 
         <p class="lead">
 
-          GÃ¶rsel Ã¶zetler, kategori filtreleri ve arama ile haberlere hÄ±zlÄ±ca ulaÅŸÄ±n.
+          Follow the strongest product, AI and gaming headlines with cleaner cards and faster scanning.
 
-          TeknoHaber â€” teknoloji, oyun ve dijital gÃ¼ndem.
+          A faster way to scan device launches, AI shifts, cloud gaming updates and platform moves.
 
         </p>
 
@@ -923,1065 +859,353 @@
 
 
     <section id="one-cikan" class="featured-wrap section-tight">
-
       <div class="wrap">
-
-        <h2 class="featured-title">Öne çıkan</h2>
-
+        <h2 class="featured-title">Signal booster</h2>
         <article class="featured-card">
-
-          <a class="featured-card__link" href="#haber-1">
-
+          <a class="featured-card__link" href="#haber-4">
             <figure class="featured-card__media">
-
-              <img
-
-                src="https://picsum.photos/seed/teknohaber-img-17/1200/800"
-
-                alt=""
-
-                width="960"
-
-                height="540"
-
-                loading="eager"
-
-                fetchpriority="high"
-
-                decoding="async"
-
-              />
-
-              <figcaption class="visually-hidden">Büyük dil modellerinde bağlam penceresi genişliyor</figcaption>
-
+              <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1400&h=900&fit=crop&auto=format" alt="Samsung keeps expanding Galaxy AI beyond flagship devices" width="960" height="540" loading="eager" fetchpriority="high" decoding="async" />
+              <span class="featured-card__spot">Mobile AI becomes more accessible</span>
+              <figcaption class="visually-hidden">Samsung keeps expanding Galaxy AI beyond flagship devices</figcaption>
             </figure>
-
             <div class="featured-card__content">
-
-              <span class="tag tag-ai">Yapay zekÃ¢</span>
-
-              <time datetime="2026-03-28">28 Mart 2026</time>
-
-              <h2>Büyük dil modellerinde bağlam penceresi genişliyor</h2>
-
-              <p>Uzun dokümanları tek seferde işleyebilen yeni mimariler, araştırma ve üretkenlik araçlarında tartışma başlattı.</p>
-
-              <span class="featured-card__cta">Devamını oku</span>
-
+              <span class="tag tag-mobile">Mobile</span>
+              <time datetime="2026-03-29">29 March 2026</time>
+              <h2>Samsung keeps expanding Galaxy AI beyond flagship devices</h2>
+              <p>Live translation, note summaries and smarter editing tools are reaching a wider device pool.</p>
+              <span class="featured-card__lead">Samsung / Galaxy AI</span>
+              <span class="featured-card__cta">Read the full brief</span>
             </div>
-
           </a>
-
         </article>
-
       </div>
-
     </section>
 
 
 
     <section id="haberler" class="section section-alt">
-
       <div class="wrap">
-
-        <div class="section-head">
-
-          <h2>Tüm haberler</h2>
-
-          <p class="section-desc">Görselli özetler — arama ve kategori ile süzün. Görseller gri tonlamalıdır; göz yormaz.</p>
-
-        </div>
-
-
-
-        <div class="news-toolbar" role="region" aria-label="Haber filtreleri">
-
-          <label class="search-field">
-
-            <span class="search-field__label">Ara</span>
-
-            <input type="search" id="haber-ara" class="search-input" placeholder="Başlık veya özet içinde ara…" autocomplete="off" aria-describedby="haber-sonuc" />
-
-          </label>
-
-          <div class="filter-chips" id="kategori-filtre" role="group" aria-label="Kategori">
-
-            <button type="button" class="chip chip--active" data-filter="all">Tümü</button>
-
-            <button type="button" class="chip" data-filter="ai">Yapay zekÃ¢</button>
-
-            <button type="button" class="chip" data-filter="game">Oyun</button>
-
-            <button type="button" class="chip" data-filter="hardware">Donanım</button>
-
-            <button type="button" class="chip" data-filter="console">Konsol</button>
-
-            <button type="button" class="chip" data-filter="mobile">Mobil</button>
-
-            <button type="button" class="chip" data-filter="security">Güvenlik</button>
-
-            <button type="button" class="chip" data-filter="esport">e-Spor</button>
-
-            <button type="button" class="chip" data-filter="vr">VR / AR</button>
-
-            <button type="button" class="chip" data-filter="indie">İndie</button>
-
-            <button type="button" class="chip" data-filter="cloud">Bulut</button>
-
-            <button type="button" class="chip" data-filter="pc">PC</button>
-
-            <button type="button" class="chip" data-filter="software">Yazılım</button>
-
-            <button type="button" class="chip" data-filter="smart">Akıllı ev</button>
-
-            <button type="button" class="chip" data-filter="retro">Retro</button>
-
+        <div class="section-head section-head--stacked">
+          <div>
+            <h2>Live feed</h2>
+            <p class="section-desc">A sharper March 2026 stream with stronger visuals, cleaner metadata and more relevant story groupings.</p>
           </div>
-
-          <p id="haber-sonuc" class="news-result" aria-live="polite">27 haber gösteriliyor</p>
-
+          <div class="section-badge">15 fresh stories</div>
         </div>
-
-
-
-        <p id="haber-bos" class="news-empty hidden" role="status">Sonuç bulunamadı. Farklı bir arama veya kategori deneyin.</p>
-
-
-
+        <div class="news-toolbar" role="region" aria-label="News filters">
+          <label class="search-field">
+            <span class="search-field__label">Search</span>
+            <input type="search" id="haber-ara" class="search-input" placeholder="Search titles and summaries" autocomplete="off" aria-describedby="haber-sonuc" />
+          </label>
+          <div class="filter-chips" id="kategori-filtre" role="group" aria-label="Category">
+            <button type="button" class="chip chip--active" data-filter="all">All</button><button type="button" class="chip" data-filter="ai">AI</button><button type="button" class="chip" data-filter="mobile">Mobile</button><button type="button" class="chip" data-filter="software">Software</button><button type="button" class="chip" data-filter="hardware">Hardware</button><button type="button" class="chip" data-filter="cloud">Cloud</button><button type="button" class="chip" data-filter="game">Gaming</button><button type="button" class="chip" data-filter="console">Console</button><button type="button" class="chip" data-filter="security">Security</button>
+          </div>
+          <p id="haber-sonuc" class="news-result" aria-live="polite">15 stories shown</p>
+        </div>
+        <p id="haber-bos" class="news-empty hidden" role="status">No results. Try another category or search.</p>
         <ul class="news-grid" id="haber-listesi">
-
-          <li class="news-card" id="haber-1" data-category="ai" data-search="büyük dil modellerinde bağlam penceresi genişliyor uzun dokümanları tek seferde işleyebilen yeni mimariler araştırma üretkenlik">
-
+          <li class="news-card" id="haber-1" data-category="mobile" data-search="apple macbook neo iphone 17e ipad air m4 macbook air m5 studio display sales">
             <article>
-
-              <a class="news-card__link" href="#">
-
+              <a class="news-card__link" href="#haber-1">
                 <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-18/1200/800" alt="Büyük dil modellerinde bağlam penceresi genişliyor" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-ai">Yapay zekÃ¢</span>
-
-                </figure>
-
-                <div class="news-card__body">
-
-                  <time datetime="2026-03-28">28 Mart 2026</time>
-
-                  <h3>Büyük dil modellerinde bağlam penceresi genişliyor</h3>
-
-                  <p>Uzun dokümanları tek seferde işleyebilen yeni mimariler, araştırma ve üretkenlik araçlarında tartışma başlattı.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
-                </div>
-
-              </a>
-
-            </article>
-
-          </li>
-
-          <li class="news-card" data-category="game" data-search="açık dünya rpg mod desteği resmileşti topluluk içerikleri mağaza çeviri">
-
-            <article>
-
-              <a class="news-card__link" href="#">
-
-                <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-19/1200/800" alt="Açık dünya RPG'sinde mod desteği resmileşti" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-game">Oyun</span>
-
-                </figure>
-
-                <div class="news-card__body">
-
-                  <time datetime="2026-03-27">27 Mart 2026</time>
-
-                  <h3>Açık dünya RPG'sinde mod desteği resmileşti</h3>
-
-                  <p>Topluluk içerikleri resmi araçlarla mağazaya taşınabilecek; çeviri ve düzenleme paketleri öne çıkıyor.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
-                </div>
-
-              </a>
-
-            </article>
-
-          </li>
-
-          <li class="news-card" data-category="hardware" data-search="grafik kartı orta segment 1080p 1440p güç tüketimi performans">
-
-            <article>
-
-              <a class="news-card__link" href="#">
-
-                <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-20/1200/800" alt="Grafik kartı piyasasında orta segment yenileniyor" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-hardware">Donanım</span>
-
-                </figure>
-
-                <div class="news-card__body">
-
-                  <time datetime="2026-03-26">26 Mart 2026</time>
-
-                  <h3>Grafik kartı piyasasında orta segment yenileniyor</h3>
-
-                  <p>1080p ve 1440p oyunlarda güç tüketimi ile performans dengesi yeni kartlarda öncelik haline geldi.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
-                </div>
-
-              </a>
-
-            </article>
-
-          </li>
-
-          <li class="news-card" data-category="console" data-search="el konsolu pil ömrü güncelleme taşınabilir oyun">
-
-            <article>
-
-              <a class="news-card__link" href="#">
-
-                <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-21/1200/800" alt="El konsolunda pil ömrü güncellemesi yayınlandı" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-console">Konsol</span>
-
-                </figure>
-
-                <div class="news-card__body">
-
-                  <time datetime="2026-03-25">25 Mart 2026</time>
-
-                  <h3>El konsolunda pil ömrü güncellemesi yayınlandı</h3>
-
-                  <p>Arka plan işlemleri sınırlandırılarak taşınabilir oyun süresi uzatıldı; kullanıcılar geri bildirimle karşıladı.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
-                </div>
-
-              </a>
-
-            </article>
-
-          </li>
-
-          <li class="news-card" data-category="mobile" data-search="mağaza uygulama gizlilik etiketleri veri toplama geliştirici">
-
-            <article>
-
-              <a class="news-card__link" href="#">
-
-                <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-22/1200/800" alt="Üç büyük mağaza uygulama gizlilik etiketlerini sıkılaştırdı" width="640" height="360" loading="lazy" decoding="async" />
-
+                  <img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?w=1400&h=900&fit=crop&auto=format" alt="Apple launches MacBook Neo and iPhone 17e worldwide" width="640" height="360" loading="lazy" decoding="async" />
+                  <span class="news-card__index">01</span>
                   <span class="tag tag-mobile">Mobil</span>
-
                 </figure>
-
                 <div class="news-card__body">
-
-                  <time datetime="2026-03-24">24 Mart 2026</time>
-
-                  <h3>Üç büyük mağaza uygulama gizlilik etiketlerini sıkılaştırdı</h3>
-
-                  <p>Veri toplama politikaları daha okunur hale getirildi; geliştiricilere geçiş süresi tanındı.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
+                  <div class="news-card__meta">
+                    <time datetime="2026-03-31">31 March 2026</time>
+                    <span class="news-card__eyebrow">Apple / Devices</span>
+                  </div>
+                  <h3>Apple launches MacBook Neo and iPhone 17e worldwide</h3>
+                  <p>Apple moved its new iPhone, iPad Air M4 and M5 Mac lineup into stores with a broader price spread.</p>
+                  <span class="news-card__cta">Open story</span>
                 </div>
-
               </a>
-
             </article>
-
           </li>
-
-          <li class="news-card" data-category="cloud" data-search="oyun yayınlama hizmeti bölge sunucu abonelik">
-
+          <li class="news-card" id="haber-2" data-category="software" data-search="google gemini workspace docs sheets slides drive productivity ai">
             <article>
-
-              <a class="news-card__link" href="#">
-
+              <a class="news-card__link" href="#haber-2">
                 <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-23/1200/800" alt="Oyun yayınlama hizmeti yeni bölgeye açıldı" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-cloud">Bulut</span>
-
+                  <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?w=1400&h=900&fit=crop&auto=format" alt="Google pushes Gemini deeper into daily productivity flows" width="640" height="360" loading="lazy" decoding="async" />
+                  <span class="news-card__index">02</span>
+                  <span class="tag tag-software">Software</span>
                 </figure>
-
                 <div class="news-card__body">
-
-                  <time datetime="2026-03-19">19 Mart 2026</time>
-
-                  <h3>Oyun yayınlama hizmeti yeni bölgeye açıldı</h3>
-
-                  <p>Gecikme süreleri için yerel sunucu kümesi devreye alındı; abonelik planlarına oyun paketi eklendi.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
+                  <div class="news-card__meta">
+                    <time datetime="2026-03-31">31 March 2026</time>
+                    <span class="news-card__eyebrow">Google / Workspace AI</span>
+                  </div>
+                  <h3>Google pushes Gemini deeper into daily productivity flows</h3>
+                  <p>Docs, Sheets and meeting summaries now put AI writing, revision and context tools closer to the main workflow.</p>
+                  <span class="news-card__cta">Open story</span>
                 </div>
-
               </a>
-
             </article>
-
           </li>
-
-          <li class="news-card" data-category="hardware" data-search="ssd fiyat nvm express kapasite maliyet">
-
+          <li class="news-card" id="haber-3" data-category="ai" data-search="meta amd ai infrastructure instinct gpu agreement data center training">
             <article>
-
-              <a class="news-card__link" href="#">
-
+              <a class="news-card__link" href="#haber-3">
                 <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-24/1200/800" alt="SSD fiyatlarında kısmi düşüş gözleniyor" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-hardware">Donanım</span>
-
+                  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&h=900&fit=crop&auto=format" alt="Meta and AMD announce a long-term AI infrastructure deal" width="640" height="360" loading="lazy" decoding="async" />
+                  <span class="news-card__index">03</span>
+                  <span class="tag tag-ai">AI</span>
                 </figure>
-
                 <div class="news-card__body">
-
-                  <time datetime="2026-03-10">10 Mart 2026</time>
-
-                  <h3>SSD fiyatlarında kısmi düşüş gözleniyor</h3>
-
-                  <p>NVM Express sürücülerde kapasite başına maliyet geçen çeyreğe göre azaldı.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
+                  <div class="news-card__meta">
+                    <time datetime="2026-03-30">30 March 2026</time>
+                    <span class="news-card__eyebrow">Meta / Data Center</span>
+                  </div>
+                  <h3>Meta and AMD announce a long-term AI infrastructure deal</h3>
+                  <p>Meta is locking major AMD Instinct capacity into its roadmap as compute planning becomes central to the AI race.</p>
+                  <span class="news-card__cta">Open story</span>
                 </div>
-
               </a>
-
             </article>
-
           </li>
-
-          <li class="news-card" data-category="security" data-search="kurumsal e-posta kimlik avı çok faktörlü doğrulama kılavuz">
-
+          <li class="news-card" id="haber-4" data-category="mobile" data-search="samsung galaxy ai one ui mobile translation note summary more devices">
             <article>
-
-              <a class="news-card__link" href="#">
-
+              <a class="news-card__link" href="#haber-4">
                 <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-25/1200/800" alt="Kurumsal e-postalarda kimlik avına karşı yeni kılavuz" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-security">Güvenlik</span>
-
+                  <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1400&h=900&fit=crop&auto=format" alt="Samsung keeps expanding Galaxy AI beyond flagship devices" width="640" height="360" loading="lazy" decoding="async" />
+                  <span class="news-card__index">04</span>
+                  <span class="tag tag-mobile">Mobile</span>
                 </figure>
-
                 <div class="news-card__body">
-
-                  <time datetime="2026-03-23">23 Mart 2026</time>
-
-                  <h3>Kurumsal e-postalarda kimlik avına karşı yeni kılavuz</h3>
-
-                  <p>Çok faktörlü doğrulama ve alan adı doğrulaması birlikte ele alındı; küçük işletmelere yönelik öneriler yayınlandı.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
+                  <div class="news-card__meta">
+                    <time datetime="2026-03-29">29 March 2026</time>
+                    <span class="news-card__eyebrow">Samsung / Galaxy AI</span>
+                  </div>
+                  <h3>Samsung keeps expanding Galaxy AI beyond flagship devices</h3>
+                  <p>Live translation, note summaries and smarter editing tools are reaching a wider device pool.</p>
+                  <span class="news-card__cta">Open story</span>
                 </div>
-
               </a>
-
             </article>
-
           </li>
-
-          <li class="news-card" data-category="esport" data-search="uluslararası turnuva format çift eleme bilet">
-
+          <li class="news-card" id="haber-5" data-category="console" data-search="xbox partner preview game pass 19 games 14 day one console">
             <article>
-
-              <a class="news-card__link" href="#">
-
+              <a class="news-card__link" href="#haber-5">
                 <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-26/1200/800" alt="Uluslararası turnuvada format değişikliği duyuruldu" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-esport">e-Spor</span>
-
+                  <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4d3?w=1400&h=900&fit=crop&auto=format" alt="Xbox Partner Preview puts 19 games and 14 day-one Game Pass launches on the board" width="640" height="360" loading="lazy" decoding="async" />
+                  <span class="news-card__index">05</span>
+                  <span class="tag tag-console">Console</span>
                 </figure>
-
                 <div class="news-card__body">
-
-                  <time datetime="2026-03-22">22 Mart 2026</time>
-
-                  <h3>Uluslararası turnuvada format değişikliği duyuruldu</h3>
-
-                  <p>Çift eleme ve grup aşaması birleştirildi; seyirci sayısı için bilet satışı erken açıldı.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
+                  <div class="news-card__meta">
+                    <time datetime="2026-03-28">28 March 2026</time>
+                    <span class="news-card__eyebrow">Xbox / Release Calendar</span>
+                  </div>
+                  <h3>Xbox Partner Preview puts 19 games and 14 day-one Game Pass launches on the board</h3>
+                  <p>Microsoft used the event to keep Game Pass momentum high while giving partner titles a clean spotlight.</p>
+                  <span class="news-card__cta">Open story</span>
                 </div>
-
               </a>
-
             </article>
-
           </li>
-
-          <li class="news-card" data-category="vr" data-search="karma gerçeklik gözlük fiyat ofis eğitim oyun demosu">
-
+          <li class="news-card" id="haber-6" data-category="cloud" data-search="geforce now vr 90 fps cloud gaming account labels gdc nvidia">
             <article>
-
-              <a class="news-card__link" href="#">
-
+              <a class="news-card__link" href="#haber-6">
                 <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-27/1200/800" alt="Hafif karma gerçeklik gözlüğü fiyat bandı netleşti" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-vr">VR / AR</span>
-
+                  <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1400&h=900&fit=crop&auto=format" alt="GeForce NOW adds 90 FPS VR streaming and cleaner game discovery" width="640" height="360" loading="lazy" decoding="async" />
+                  <span class="news-card__index">06</span>
+                  <span class="tag tag-cloud">Cloud</span>
                 </figure>
-
                 <div class="news-card__body">
-
-                  <time datetime="2026-03-21">21 Mart 2026</time>
-
-                  <h3>Hafif karma gerçeklik gözlüğü fiyat bandı netleşti</h3>
-
-                  <p>Ofis ve eğitim senaryoları için odaklanan model, oyun demosu paketiyle geliyor.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
+                  <div class="news-card__meta">
+                    <time datetime="2026-03-27">27 March 2026</time>
+                    <span class="news-card__eyebrow">NVIDIA / Cloud Gaming</span>
+                  </div>
+                  <h3>GeForce NOW adds 90 FPS VR streaming and cleaner game discovery</h3>
+                  <p>NVIDIA is improving both cloud performance and account-linked discovery at the same time.</p>
+                  <span class="news-card__cta">Open story</span>
                 </div>
-
               </a>
-
             </article>
-
           </li>
-
-          <li class="news-card" data-category="indie" data-search="türkiye yapımı bulmaca oyun ödül festival yaratıcı oynanış">
-
+          <li class="news-card" id="haber-7" data-category="ai" data-search="nvidia comfyui local video generation creator workflows rtx gdc">
             <article>
-
-              <a class="news-card__link" href="#">
-
+              <a class="news-card__link" href="#haber-7">
                 <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-28/1200/800" alt="Türkiye yapımı bulmaca oyunu ödül listesinde" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-indie">İndie</span>
-
+                  <img src="https://images.unsplash.com/photo-1574717024453-3540565e0d7d?w=1400&h=900&fit=crop&auto=format" alt="NVIDIA and ComfyUI show faster local video generation workflows" width="640" height="360" loading="lazy" decoding="async" />
+                  <span class="news-card__index">07</span>
+                  <span class="tag tag-ai">AI</span>
                 </figure>
-
                 <div class="news-card__body">
-
-                  <time datetime="2026-03-20">20 Mart 2026</time>
-
-                  <h3>Türkiye yapımı bulmaca oyunu ödül listesinde</h3>
-
-                  <p>UluslararasÄ± festivalde â€œyaratÄ±cÄ± oynanÄ±ÅŸâ€ kategorisinde aday gÃ¶sterildi.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
+                  <div class="news-card__meta">
+                    <time datetime="2026-03-27">27 March 2026</time>
+                    <span class="news-card__eyebrow">RTX / Creator Tools</span>
+                  </div>
+                  <h3>NVIDIA and ComfyUI show faster local video generation workflows</h3>
+                  <p>New GDC demos focused on lower-latency media creation directly on RTX-class systems.</p>
+                  <span class="news-card__cta">Open story</span>
                 </div>
-
               </a>
-
             </article>
-
           </li>
-
-          <li class="news-card" data-category="cloud" data-search="oyun yayınlama hizmeti bölge sunucu abonelik">
-
+          <li class="news-card" id="haber-8" data-category="software" data-search="xbox march update home groups color customization dashboard">
             <article>
-
-              <a class="news-card__link" href="#">
-
+              <a class="news-card__link" href="#haber-8">
                 <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-29/1200/800" alt="Oyun yayınlama hizmeti yeni bölgeye açıldı" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-cloud">Bulut</span>
-
+                  <img src="https://images.unsplash.com/photo-1486572788966-cfd3df1f5b42?w=1400&h=900&fit=crop&auto=format" alt="The March Xbox update expands Home groups and color customization" width="640" height="360" loading="lazy" decoding="async" />
+                  <span class="news-card__index">08</span>
+                  <span class="tag tag-software">Software</span>
                 </figure>
-
                 <div class="news-card__body">
-
-                  <time datetime="2026-03-19">19 Mart 2026</time>
-
-                  <h3>Oyun yayınlama hizmeti yeni bölgeye açıldı</h3>
-
-                  <p>Gecikme süreleri için yerel sunucu kümesi devreye alındı; abonelik planlarına oyun paketi eklendi.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
+                  <div class="news-card__meta">
+                    <time datetime="2026-03-26">26 March 2026</time>
+                    <span class="news-card__eyebrow">Xbox / System Software</span>
+                  </div>
+                  <h3>The March Xbox update expands Home groups and color customization</h3>
+                  <p>Small but practical quality-of-life changes continue to shape the console dashboard.</p>
+                  <span class="news-card__cta">Open story</span>
                 </div>
-
               </a>
-
             </article>
-
           </li>
-
-          <li class="news-card" data-category="pc" data-search="steam indirim etkinliği istek listesi demo kooperatif">
-
+          <li class="news-card" id="haber-9" data-category="game" data-search="playstation players choice february 2026 vote blog">
             <article>
-
-              <a class="news-card__link" href="#">
-
+              <a class="news-card__link" href="#haber-9">
                 <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-30/1200/800" alt="Steam'de yılın ilk indirim etkinliği tarihleri açıklandı" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-pc">PC</span>
-
+                  <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=1400&h=900&fit=crop&auto=format" alt="PlayStation opens the vote for the most talked-about new game of February" width="640" height="360" loading="lazy" decoding="async" />
+                  <span class="news-card__index">09</span>
+                  <span class="tag tag-game">Gaming</span>
                 </figure>
-
                 <div class="news-card__body">
-
-                  <time datetime="2026-03-18">18 Mart 2026</time>
-
-                  <h3>Steam’de yılın ilk indirim etkinliği tarihleri açıklandı</h3>
-
-                  <p>İstek listesi ve demolarla birlikte kooperatif oyunlara vurgu yapılacak.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
+                  <div class="news-card__meta">
+                    <time datetime="2026-03-25">25 March 2026</time>
+                    <span class="news-card__eyebrow">PlayStation / Community</span>
+                  </div>
+                  <h3>PlayStation opens the vote for the most talked-about new game of February</h3>
+                  <p>Community polling is putting the month's biggest releases back into the spotlight.</p>
+                  <span class="news-card__cta">Open story</span>
                 </div>
-
               </a>
-
             </article>
-
           </li>
-
-          <li class="news-card" data-category="software" data-search="açık kaynak paket yöneticisi güvenlik yayın imzası geçiş">
-
+          <li class="news-card" id="haber-10" data-category="game" data-search="game pass march wave 2 subscription catalog variety">
             <article>
-
-              <a class="news-card__link" href="#">
-
+              <a class="news-card__link" href="#haber-10">
                 <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-31/1200/800" alt="Açık kaynak paket yöneticisi güvenlik denetimini sıkılaştırdı" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-software">Yazılım</span>
-
+                  <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?w=1400&h=900&fit=crop&auto=format" alt="Game Pass March wave two broadens the catalog with more genre variety" width="640" height="360" loading="lazy" decoding="async" />
+                  <span class="news-card__index">10</span>
+                  <span class="tag tag-game">Gaming</span>
                 </figure>
-
                 <div class="news-card__body">
-
-                  <time datetime="2026-03-17">17 Mart 2026</time>
-
-                  <h3>Açık kaynak paket yöneticisi güvenlik denetimini sıkılaştırdı</h3>
-
-                  <p>İki faktörlü yayın imzası zorunluluğu tartışılıyor; geçiş takvimi paylaşıldı.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
+                  <div class="news-card__meta">
+                    <time datetime="2026-03-24">24 March 2026</time>
+                    <span class="news-card__eyebrow">Game Pass / Catalog</span>
+                  </div>
+                  <h3>Game Pass March wave two broadens the catalog with more genre variety</h3>
+                  <p>The late-month package keeps the subscription service busy with a wider spread of play styles.</p>
+                  <span class="news-card__cta">Open story</span>
                 </div>
-
               </a>
-
             </article>
-
           </li>
-
-          <li class="news-card" data-category="game" data-search="nişancı oyun sezon haritası silah yaması sıralama">
-
+          <li class="news-card" id="haber-11" data-category="hardware" data-search="apple studio display xdr desktop creators mac hardware">
             <article>
-
-              <a class="news-card__link" href="#">
-
+              <a class="news-card__link" href="#haber-11">
                 <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-32/1200/800" alt="Ünlü nişancı oyununda yeni sezon haritası geldi" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-game">Oyun</span>
-
+                  <img src="https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?w=1400&h=900&fit=crop&auto=format" alt="Apple positions the new Studio Display family for high-end desktop setups" width="640" height="360" loading="lazy" decoding="async" />
+                  <span class="news-card__index">11</span>
+                  <span class="tag tag-hardware">Hardware</span>
                 </figure>
-
                 <div class="news-card__body">
-
-                  <time datetime="2026-03-16">16 Mart 2026</time>
-
-                  <h3>Ünlü nişancı oyununda yeni sezon haritası geldi</h3>
-
-                  <p>Dengeli silah yamasıyla birlikte sıralama modu sıfırlandı; topluluk önerileri dikkate alındı.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
+                  <div class="news-card__meta">
+                    <time datetime="2026-03-23">23 March 2026</time>
+                    <span class="news-card__eyebrow">Apple / Display</span>
+                  </div>
+                  <h3>Apple positions the new Studio Display family for high-end desktop setups</h3>
+                  <p>The display push lands alongside newer Macs and reinforces Apple's creator desk strategy.</p>
+                  <span class="news-card__cta">Open story</span>
                 </div>
-
               </a>
-
             </article>
-
           </li>
-
-          <li class="news-card" data-category="smart" data-search="matter standardı akıllı ev kapı sensörü termostat uygulama">
-
+          <li class="news-card" id="haber-12" data-category="security" data-search="enterprise ai data permissions policy access security">
             <article>
-
-              <a class="news-card__link" href="#">
-
+              <a class="news-card__link" href="#haber-12">
                 <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-33/1200/800" alt="Matter standardı ile uyumlu cihaz sayısı ikiye katlandı" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-smart">Akıllı ev</span>
-
+                  <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1400&h=900&fit=crop&auto=format" alt="Enterprise teams revisit data permissions as AI tools spread faster" width="640" height="360" loading="lazy" decoding="async" />
+                  <span class="news-card__index">12</span>
+                  <span class="tag tag-security">Security</span>
                 </figure>
-
                 <div class="news-card__body">
-
-                  <time datetime="2026-03-15">15 Mart 2026</time>
-
-                  <h3>Matter standardı ile uyumlu cihaz sayısı ikiye katlandı</h3>
-
-                  <p>Kapı sensörleri ve termostatlar tek uygulamada birleşmeye başladı.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
+                  <div class="news-card__meta">
+                    <time datetime="2026-03-22">22 March 2026</time>
+                    <span class="news-card__eyebrow">Enterprise / Security</span>
+                  </div>
+                  <h3>Enterprise teams revisit data permissions as AI tools spread faster</h3>
+                  <p>The more AI enters daily work, the more access boundaries and policy design move back into focus.</p>
+                  <span class="news-card__cta">Open story</span>
                 </div>
-
               </a>
-
             </article>
-
           </li>
-
-          <li class="news-card" data-category="ai" data-search="görüntü üretim telif filigran platform sanatçı">
-
+          <li class="news-card" id="haber-13" data-category="mobile" data-search="qualcomm 6g roadmap mobile connectivity efficiency">
             <article>
-
-              <a class="news-card__link" href="#">
-
+              <a class="news-card__link" href="#haber-13">
                 <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-34/1200/800" alt="Görüntü üretiminde telif ve filigran zorunluluğu gündemde" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-ai">Yapay zekÃ¢</span>
-
+                  <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1400&h=900&fit=crop&auto=format" alt="Qualcomm's 6G roadmap is starting to sound more concrete" width="640" height="360" loading="lazy" decoding="async" />
+                  <span class="news-card__index">13</span>
+                  <span class="tag tag-mobile">Mobile</span>
                 </figure>
-
                 <div class="news-card__body">
-
-                  <time datetime="2026-03-14">14 Mart 2026</time>
-
-                  <h3>Görüntü üretiminde telif ve filigran zorunluluğu gündemde</h3>
-
-                  <p>Platformlar otomatik etiketleme deniyor; sanatçı birlikleri ortak bildiri yayınladı.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
+                  <div class="news-card__meta">
+                    <time datetime="2026-03-21">21 March 2026</time>
+                    <span class="news-card__eyebrow">Qualcomm / Networks</span>
+                  </div>
+                  <h3>Qualcomm's 6G roadmap is starting to sound more concrete</h3>
+                  <p>Industry planning is shifting from raw speed talk toward device intelligence and efficiency.</p>
+                  <span class="news-card__cta">Open story</span>
                 </div>
-
               </a>
-
             </article>
-
           </li>
-
-          <li class="news-card" data-category="retro" data-search="klasik konsol kütüphane lisanslı oyun arşiv çözünürlük">
-
+          <li class="news-card" id="haber-14" data-category="mobile" data-search="galaxy s26 lighter design practical ai mobile">
             <article>
-
-              <a class="news-card__link" href="#">
-
+              <a class="news-card__link" href="#haber-14">
                 <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-35/1200/800" alt="Klasik konsol kütüphanesine yeni lisanslı oyunlar eklendi" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-retro">Retro</span>
-
+                  <img src="https://images.unsplash.com/photo-1510557880182-3d4d3caba5e7?w=1400&h=900&fit=crop&auto=format" alt="Galaxy S26 talk centers on lighter design and practical AI usage" width="640" height="360" loading="lazy" decoding="async" />
+                  <span class="news-card__index">14</span>
+                  <span class="tag tag-mobile">Mobile</span>
                 </figure>
-
                 <div class="news-card__body">
-
-                  <time datetime="2026-03-13">13 Mart 2026</time>
-
-                  <h3>Klasik konsol kütüphanesine yeni lisanslı oyunlar eklendi</h3>
-
-                  <p>Arşiv koleksiyonu genişlerken orijinal çözünürlük ve kare hızı seçenekleri korunuyor.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
+                  <div class="news-card__meta">
+                    <time datetime="2026-03-20">20 March 2026</time>
+                    <span class="news-card__eyebrow">Galaxy S26 / Early Look</span>
+                  </div>
+                  <h3>Galaxy S26 talk centers on lighter design and practical AI usage</h3>
+                  <p>Early discussion suggests Samsung will pair industrial design changes with more visible daily AI features.</p>
+                  <span class="news-card__cta">Open story</span>
                 </div>
-
               </a>
-
             </article>
-
           </li>
-
-          <li class="news-card" data-category="mobile" data-search="katlanabilir telefon ekran dayanıklılık laboratuvar test">
-
+          <li class="news-card" id="haber-15" data-category="software" data-search="work apps summary revision action extraction enterprise ai software">
             <article>
-
-              <a class="news-card__link" href="#">
-
+              <a class="news-card__link" href="#haber-15">
                 <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-36/1200/800" alt="Katlanabilir telefonlarda ekran dayanıklılığı test edildi" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-mobile">Mobil</span>
-
+                  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&h=900&fit=crop&auto=format" alt="Summary, revision and action extraction are becoming standard in work apps" width="640" height="360" loading="lazy" decoding="async" />
+                  <span class="news-card__index">15</span>
+                  <span class="tag tag-software">Software</span>
                 </figure>
-
                 <div class="news-card__body">
-
-                  <time datetime="2026-03-12">12 Mart 2026</time>
-
-                  <h3>Katlanabilir telefonlarda ekran dayanıklılığı test edildi</h3>
-
-                  <p>Bağımsız laboratuvar sonuçları tüketici raporlarında yayımlandı.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
+                  <div class="news-card__meta">
+                    <time datetime="2026-03-19">19 March 2026</time>
+                    <span class="news-card__eyebrow">SaaS / Productivity</span>
+                  </div>
+                  <h3>Summary, revision and action extraction are becoming standard in work apps</h3>
+                  <p>Enterprise software is treating AI output tools as a core product layer rather than a bonus feature.</p>
+                  <span class="news-card__cta">Open story</span>
                 </div>
-
               </a>
-
             </article>
-
           </li>
-
-          <li class="news-card" data-category="console" data-search="abonelik ücretsiz oyun kooperatif hikaye">
-
-            <article>
-
-              <a class="news-card__link" href="#">
-
-                <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-37/1200/800" alt="Abonelik hizmetinde bu ayın ücretsiz oyunları belli oldu" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-console">Konsol</span>
-
-                </figure>
-
-                <div class="news-card__body">
-
-                  <time datetime="2026-03-11">11 Mart 2026</time>
-
-                  <h3>Abonelik hizmetinde bu ayın ücretsiz oyunları belli oldu</h3>
-
-                  <p>Kooperatif ve hikâye odaklı yapımlar listeye dahil edildi.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
-                </div>
-
-              </a>
-
-            </article>
-
-          </li>
-
-          <li class="news-card" data-category="hardware" data-search="ssd fiyat nvm express kapasite maliyet">
-
-            <article>
-
-              <a class="news-card__link" href="#">
-
-                <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-38/1200/800" alt="SSD fiyatlarında kısmi düşüş gözleniyor" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-hardware">Donanım</span>
-
-                </figure>
-
-                <div class="news-card__body">
-
-                  <time datetime="2026-03-10">10 Mart 2026</time>
-
-                  <h3>SSD fiyatlarında kısmi düşüş gözleniyor</h3>
-
-                  <p>NVM Express sürücülerde kapasite başına maliyet geçen çeyreğe göre azaldı.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
-                </div>
-
-              </a>
-
-            </article>
-
-          </li>
-
-          <li class="news-card" data-category="game" data-search="co-op hayatta kalma biyom düşman hava mevsim">
-
-            <article>
-
-              <a class="news-card__link" href="#">
-
-                <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-39/1200/800" alt="Co-op hayatta kalma oyununa biyom güncellemesi" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-game">Oyun</span>
-
-                </figure>
-
-                <div class="news-card__body">
-
-                  <time datetime="2026-03-09">9 Mart 2026</time>
-
-                  <h3>Co-op hayatta kalma oyununa biyom güncellemesi</h3>
-
-                  <p>Yeni düşman türleri ve hava olayları mevsimsel etkinlikle birlikte geldi.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
-                </div>
-
-              </a>
-
-            </article>
-
-          </li>
-
-          <li class="news-card" data-category="security" data-search="oyun hesap şifresiz giriş donanım anahtarı doğrulama">
-
-            <article>
-
-              <a class="news-card__link" href="#">
-
-                <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-40/1200/800" alt="Oyun hesapları için şifresiz giriş yaygınlaşıyor" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-security">Güvenlik</span>
-
-                </figure>
-
-                <div class="news-card__body">
-
-                  <time datetime="2026-03-08">8 Mart 2026</time>
-
-                  <h3>Oyun hesapları için şifresiz giriş yaygınlaşıyor</h3>
-
-                  <p>Donanım anahtarı ve platform içi doğrulama birlikte kullanılabiliyor.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
-                </div>
-
-              </a>
-
-            </article>
-
-          </li>
-
-          <li class="news-card" data-category="indie" data-search="oyun geliştirici buluşma istanbul demo yayıncı">
-
-            <article>
-
-              <a class="news-card__link" href="#">
-
-                <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-41/1200/800" alt="Yerel oyun geliştirici buluşması İstanbul'da yapıldı" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-indie">İndie</span>
-
-                </figure>
-
-                <div class="news-card__body">
-
-                  <time datetime="2026-03-07">7 Mart 2026</time>
-
-                  <h3>Yerel oyun geliştirici buluşması İstanbul’da yapıldı</h3>
-
-                  <p>Demo gününde on beş ekip projelerini anlattı; yayıncılarla B2B görüşmeler düzenlendi.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
-                </div>
-
-              </a>
-
-            </article>
-
-          </li>
-
-          <li class="news-card" data-category="pc" data-search="modding topluluk grafik iyileştirme rpg doku ışık">
-
-            <article>
-
-              <a class="news-card__link" href="#">
-
-                <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-42/1200/800" alt="Modding topluluğu grafik iyileştirme paketi yayınladı" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-pc">PC</span>
-
-                </figure>
-
-                <div class="news-card__body">
-
-                  <time datetime="2026-03-06">6 Mart 2026</time>
-
-                  <h3>Modding topluluğu grafik iyileştirme paketi yayınladı</h3>
-
-                  <p>Eski bir RPG için doku ve ışık güncellemesi; resmi olarak onaylandı.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
-                </div>
-
-              </a>
-
-            </article>
-
-          </li>
-
-          <li class="news-card" data-category="esport" data-search="mobil moba lig transfer kadro maç">
-
-            <article>
-
-              <a class="news-card__link" href="#">
-
-                <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-43/1200/800" alt="Mobil MOBA liginde transfer dönemi kapandı" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-esport">e-Spor</span>
-
-                </figure>
-
-                <div class="news-card__body">
-
-                  <time datetime="2026-03-05">5 Mart 2026</time>
-
-                  <h3>Mobil MOBA liginde transfer dönemi kapandı</h3>
-
-                  <p>Kadro değişiklikleri sonrası ilk maçlar hafta sonu oynanacak.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
-                </div>
-
-              </a>
-
-            </article>
-
-          </li>
-
-          <li class="news-card" data-category="cloud" data-search="yedekleme oyun kaydı senkronizasyon çoklu cihaz beta">
-
-            <article>
-
-              <a class="news-card__link" href="#">
-
-                <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-44/1200/800" alt="Yedekleme hizmeti oyun kayıtlarını otomatik senkronize edecek" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-cloud">Bulut</span>
-
-                </figure>
-
-                <div class="news-card__body">
-
-                  <time datetime="2026-03-04">4 Mart 2026</time>
-
-                  <h3>Yedekleme hizmeti oyun kayıtlarını otomatik senkronize edecek</h3>
-
-                  <p>Çoklu cihaz desteği beta aşamasında; çakışma çözümü kullanıcıya bırakıldı.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
-                </div>
-
-              </a>
-
-            </article>
-
-          </li>
-
-          <li class="news-card" data-category="ai" data-search="yapay zekâ asistan dil paketi güncelleme sesli komut çoklu dil">
-
-            <article>
-
-              <a class="news-card__link" href="#">
-
-                <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-45/1200/800" alt="Yapay zekâ asistanları yeni dil paketleriyle güncellendi" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-ai">Yapay zekÃ¢</span>
-
-                </figure>
-
-                <div class="news-card__body">
-
-                  <time datetime="2026-03-03">3 Mart 2026</time>
-
-                  <h3>Yapay zekâ asistanları yeni dil paketleriyle güncellendi</h3>
-
-                  <p>Türkçe ve bölgesel lehçeler için sesli komut doğruluğu iyileştirildi; çevrimdışı sınırlı mod eklendi.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
-                </div>
-
-              </a>
-
-            </article>
-
-          </li>
-
-          <li class="news-card" data-category="software" data-search="sürükle bırak oyun motoru sürüm görsel betik indie">
-
-            <article>
-
-              <a class="news-card__link" href="#">
-
-                <figure class="news-card__media">
-
-                  <img src="https://picsum.photos/seed/teknohaber-img-46/1200/800" alt="Sürükle-bırak oyun motoru 2.0 sürümünü duyurdu" width="640" height="360" loading="lazy" decoding="async" />
-
-                  <span class="tag tag-software">Yazılım</span>
-
-                </figure>
-
-                <div class="news-card__body">
-
-                  <time datetime="2026-03-02">2 Mart 2026</time>
-
-                  <h3>Sürükle-bırak oyun motoru 2.0 sürümünü duyurdu</h3>
-
-                  <p>Görsel betik editörü ve hazır şablonlar indie ekipler için sadeleştirildi; dışa aktarım tek tıkta.</p>
-
-                  <span class="news-card__cta">Devamını oku</span>
-
-                </div>
-
-              </a>
-
-            </article>
-
-          </li>
-
         </ul>
-
       </div>
-
     </section>
 
 
@@ -2254,7 +1478,7 @@
 
           <div class="analytics-card">
 
-            <h3>ğŸ”¥ En Ã‡ok Okunan Haberler</h3>
+            <h3>Most Read Stories</h3>
 
             <div class="trending-list">
 
@@ -2386,11 +1610,11 @@
 
           <div class="analytics-card">
 
-            <h3>ğŸ“ˆ Trend Konular</h3>
+            <h3>Trend Topics</h3>
 
             <div class="topics-cloud">
 
-              <div class="topic-tag" data-size="large">Yapay ZekÃ¢</div>
+              <div class="topic-tag" data-size="large">AI</div>
 
               <div class="topic-tag" data-size="medium">Oyun Konsolları</div>
 
@@ -2424,13 +1648,13 @@
 
           <div class="analytics-card">
 
-            <h3>ğŸ‘¥ KullanÄ±cÄ± Ä°statistikleri</h3>
+            <h3>User Stats</h3>
 
             <div class="user-stats">
 
               <div class="stat-item">
 
-                <div class="stat-icon">ğŸ‘ï¸</div>
+                <div class="stat-icon">Views</div>
 
                 <div class="stat-info">
 
@@ -2462,7 +1686,7 @@
 
               <div class="stat-item">
 
-                <div class="stat-icon">ğŸ“±</div>
+                <div class="stat-icon">Mobile</div>
 
                 <div class="stat-info">
 
@@ -2478,7 +1702,7 @@
 
               <div class="stat-item">
 
-                <div class="stat-icon">ğŸ”„</div>
+                <div class="stat-icon">Refresh</div>
 
                 <div class="stat-info">
 
@@ -2494,7 +1718,7 @@
 
               <div class="stat-item">
 
-                <div class="stat-icon">ğŸ’¬</div>
+                <div class="stat-icon">Comments</div>
 
                 <div class="stat-info">
 
@@ -2510,7 +1734,7 @@
 
               <div class="stat-item">
 
-                <div class="stat-icon">ğŸ“¤</div>
+                <div class="stat-icon">Share</div>
 
                 <div class="stat-info">
 
@@ -2598,7 +1822,7 @@
 
                 </svg>
 
-                GizliliÄŸinizi Ã¶nemsiyoruz. E-posta adresiniz hiÃ§bir zaman Ã¼Ã§Ã¼ncÃ¼ ÅŸahÄ±slarla paylaÅŸÄ±lmayacaktÄ±r.
+                We respect your privacy. Your email address will never be shared with third parties.
 
               </p>
 
@@ -2634,7 +1858,7 @@
 
               <div class="benefit-item">
 
-                <span class="benefit-icon">ğŸ“§</span>
+                <span class="benefit-icon">Mail</span>
 
                 <span>Haftalık Özet</span>
 
@@ -2642,7 +1866,7 @@
 
               <div class="benefit-item">
 
-                <span class="benefit-icon">ğŸ¯</span>
+                <span class="benefit-icon">Focus</span>
 
                 <span>Kişiselleştirilmiş İçerik</span>
 
@@ -2650,7 +1874,7 @@
 
               <div class="benefit-item">
 
-                <span class="benefit-icon">ğŸš€</span>
+                <span class="benefit-icon">Fast</span>
 
                 <span>Önce Erişim</span>
 
@@ -2658,7 +1882,7 @@
 
               <div class="benefit-item">
 
-                <span class="benefit-icon">ğŸ</span>
+                <span class="benefit-icon">Bonus</span>
 
                 <span>Özel Teklifler</span>
 
@@ -2684,9 +1908,9 @@
 
         <p>
 
-          <strong>TeknoHaber</strong>, teknoloji ve oyun gÃ¼ndemini gÃ¶rsel Ã¶zetler ve kÄ±sa haber metinleriyle sunar.
+          <strong>TeknoHaber</strong> presents technology and gaming updates with fast summaries and visual-led cards.
 
-          Ä°Ã§erikler Ã¶rnek niteliÄŸindedir; gÃ¼ncel ve doÄŸrulanmÄ±ÅŸ haber iÃ§in resmi kaynaklara baÅŸvurmanÄ±z Ã¶nerilir.
+          Stories on this page are editorial summaries; check official sources for confirmed updates.
 
         </p>
 
@@ -3709,58 +2933,116 @@
     // Haber Detay Modal FonksiyonlarÄ±
     const haberler = {
       'haber-1': {
-        title: 'Büyük dil modellerinde bağlam penceresi genişliyor',
-        category: 'Yapay ZekÃ¢',
-        categoryClass: 'tag-ai',
-        date: '28 Mart 2026',
-        image: 'https://picsum.photos/seed/teknohaber-modal-1/1200/800',
-        summary: 'Uzun dokümanları tek seferde işleyebilen yeni mimariler, araştırma ve üretkenlik araçlarında tartışma başlattı.',
+        title: 'Apple launches MacBook Neo and iPhone 17e worldwide',
+        category: 'Mobil',
+        categoryClass: 'tag-mobile',
+        date: '31 March 2026',
+        image: 'https://images.unsplash.com/photo-1517336714739-489689fd1ca8?w=900&h=520&fit=crop&auto=format',
+        summary: 'Apple moved its new iPhone, iPad Air M4 and M5 Mac lineup into stores with a broader price spread.',
         fullContent: `
-          <p>Son dönemde büyük dil modelleri (LLM) alanında önemli gelişmeler yaşanıyor. Geleneksel modeller genellikle sınırlı bağlam pencereleriyle çalışırken, yeni nesil mimariler artık binlerce sayfalık belgeleri tek seferde işleyebiliyor.</p>
-          
-          <p>Bu teknolojik atÄ±lÄ±m, Ã¶zellikle hukuk belgelerinin analizi, bilimsel makalelerin Ã¶zetlenmesi ve uzun kitaplarÄ±n Ã§evirisi gibi alanlarda devrim yaratÄ±yor. AraÅŸtÄ±rmacÄ±lar, yeni "attention mekanizmaları" sayesinde modellerin daha uzun baÄŸlamlarÄ± hatÄ±rlayabildiÄŸini belirtiyor.</p>
-          
-          <p>Teknoloji devleri de bu alana büyük yatırımlar yapıyor. OpenAI, Google ve Microsoft gibi şirketler, kendi modellerinin bağlam penceresini genişletmek için yarışıyor. Bu gelişmeler, aynı zamanda daha karmaşık sorunların çözümünü ve daha yaratıcı içeriklerin üretilmesini de beraberinde getiriyor.</p>
-          
-          <p>Uzmanlar, bu teknolojinin önümüzdeki iki yıl içinde ticari olarak yaygınlaşmasını ve birçok endüstriyi dönüştürmesini bekliyor.</p>
+          <p>Apple bundled several spring hardware launches into one retail wave and pushed the full lineup live across stores and online channels.</p>
+          <p>The new portfolio stretches from the lower-priced iPhone 17e to M4 iPad Air and M5-class MacBooks, making the release feel broader than a typical one-product refresh.</p>
+          <p>For the market, the message is simple: Apple wants the same launch cycle to serve students, creators and pro buyers at once.</p>
         `,
-        tags: ['Yapay ZekÃ¢', 'LLM', 'Teknoloji', 'Araştırma']
+        tags: ['Apple', 'iPhone 17e', 'MacBook Neo', 'M4']
       },
       'haber-2': {
-        title: 'Açık dünya RPG\'sinde mod desteÄŸi resmileÅŸti',
-        category: 'Oyun',
-        categoryClass: 'tag-game',
-        date: '27 Mart 2026',
-        image: 'https://picsum.photos/seed/teknohaber-modal-2/1200/800',
-        summary: 'Topluluk içerikleri resmi araçlarla mağazaya taşınabilecek; çeviri ve düzenleme paketleri öne çıkıyor.',
+        title: 'Google pushes Gemini deeper into daily productivity flows',
+        category: 'Software',
+        categoryClass: 'tag-software',
+        date: '31 March 2026',
+        image: 'https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?w=900&h=520&fit=crop&auto=format',
+        summary: 'Docs, Sheets and meeting summaries now put AI writing, revision and context tools closer to the main workflow.',
         fullContent: `
-          <p>Popüler açık dünya RPG oyunu, uzun süredir beklenen mod desteğini resmi olarak duyurdu. Oyuncular artık kendi yarattıkları içerikleri oyunun resmi mağazasında yayınlayabilecek.</p>
-          
-          <p>Bu gelişme, oyuncu topluluğu için büyük bir heyecan yarattı. Geliştirici ekip, modculara özel araç setleri sunacak ve en iyi içerikleri öne çıkaracak. Ayrıca farklı dillere çeviri projeleri de desteklenecek.</p>
-          
-          <p>Mod desteği sayesinde oyunun ömrü önemli ölçüde uzayacak. Yeni görevler, karakterler, bölgeler ve hatta全新的 oyun mekanikleri oyuncular tarafından eklenebilecek. Bu, oyunun yeniden oynanabilirliğini katlayarak artıracak.</p>
-          
-          <p>İlk modların yaz ayında yayınlanması planlanıyor. Geliştirici, aynı zamanda modcular için para kazanma imkanları da sunacak.</p>
+          <p>Google is moving Gemini from a side panel concept into the center of document, spreadsheet and meeting workflows.</p>
+          <p>Summaries, rewrite suggestions and structured action extraction are becoming more visible and easier to trigger without leaving the app.</p>
+          <p>That matters because the next stage of AI competition is less about raw model power and more about how naturally the tools fit into work.</p>
         `,
-        tags: ['Oyun', 'RPG', 'Mod', 'Topluluk']
+        tags: ['Google', 'Gemini', 'Workspace', 'Productivity']
       },
       'haber-3': {
-        title: 'Grafik kartı piyasasında orta segment yenileniyor',
-        category: 'Donanım',
-        categoryClass: 'tag-hardware',
-        date: '26 Mart 2026',
-        image: 'https://picsum.photos/seed/teknohaber-modal-3/1200/800',
-        summary: '1080p ve 1440p oyunlarda güç tüketimi ile performans dengesi yeni kartlarda öncelik haline geldi.',
+        title: 'Meta and AMD announce a long-term AI infrastructure deal',
+        category: 'AI',
+        categoryClass: 'tag-ai',
+        date: '30 March 2026',
+        image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=520&fit=crop&auto=format',
+        summary: 'Meta is locking major AMD Instinct capacity into its roadmap as compute planning becomes central to the AI race.',
         fullContent: `
-          <p>Ekran kartı piyasasında orta segmentte hareketli günler yaşanıyor. Hem NVIDIA hem de AMD, yeni nesil orta segment kartlarını duyurdu. Bu kartlar, özellikle 1080p ve 1440p çözünürlükte oyun oynamak isteyenler için ideal seçenekler sunuyor.</p>
-          
-          <p>Yeni kartların en dikkat çekici özelliği güç verimliliği. Geçen nesle göre %30 daha az güç tüketen yeni modeller, aynı zamanda daha iyi performans sunuyor. Bu durum, özellikle küçük kasalı sistemler ve dizüstü bilgisayarlar için önemli bir avantaj.</p>
-          
-          <p>Fiyatlandırma da rekabetçi. 300-500 dolar bandında yer alan yeni kartlar, birçok oyuncu için erişilebilir olacak. Üreticiler, kripto madenciliği sonrası artan stoklarla birlikte fiyatları düşürmeyi başardı.</p>
-          
-          <p>Uzmanlar, bu gelişmelerin oyun donanımı pazarını canlandıracağını ve daha fazla oyuncunun kaliteli grafiklere erişmesini sağlayacağını belirtiyor.</p>
+          <p>The Meta and AMD announcement shows how AI scaling now depends on supply, hardware planning and long-term infrastructure partnerships.</p>
+          <p>The center of gravity here is AMD Instinct GPU capacity, tied directly into future model training and deployment plans.</p>
+          <p>It is another sign that hyperscalers want more flexibility than a single-vendor strategy can offer.</p>
         `,
-        tags: ['Donanım', 'Ekran Kartı', 'NVIDIA', 'AMD']
+        tags: ['Meta', 'AMD', 'Instinct', 'AI Infrastructure']
+      },
+      'haber-4': {
+        title: 'Samsung keeps expanding Galaxy AI beyond flagship devices',
+        category: 'Mobile',
+        categoryClass: 'tag-mobile',
+        date: '29 March 2026',
+        image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=900&h=520&fit=crop&auto=format',
+        summary: 'Live translation, note summaries and smarter editing tools are reaching a wider device pool.',
+        fullContent: `
+          <p>Samsung is trying to turn Galaxy AI into an ecosystem layer rather than a premium-only marketing term.</p>
+          <p>The focus is on practical features such as translation, summarization and editing that feel useful in everyday use.</p>
+          <p>That broader rollout is important because mobile AI only becomes a platform story when it reaches more than a few top-tier phones.</p>
+        `,
+        tags: ['Samsung', 'Galaxy AI', 'One UI', 'Mobile']
+      },
+      'haber-5': {
+        title: 'Xbox Partner Preview puts 19 games and 14 day-one Game Pass launches on the board',
+        category: 'Console',
+        categoryClass: 'tag-console',
+        date: '28 March 2026',
+        image: 'https://images.unsplash.com/photo-1606144042614-b2417e99c4d3?w=900&h=520&fit=crop&auto=format',
+        summary: 'Microsoft used the event to keep Game Pass momentum high while giving partner titles a clean spotlight.',
+        fullContent: `
+          <p>The latest Partner Preview balanced indie visibility with a clear subscription message around day-one availability.</p>
+          <p>That combination matters because Game Pass works best when content discovery and release timing feel tightly connected.</p>
+          <p>For 2026, Microsoft is signaling that cadence and variety matter as much as tentpole exclusives.</p>
+        `,
+        tags: ['Xbox', 'Game Pass', 'Partner Preview', 'Console']
+      },
+      'haber-6': {
+        title: 'GeForce NOW adds 90 FPS VR streaming and cleaner game discovery',
+        category: 'Cloud',
+        categoryClass: 'tag-cloud',
+        date: '27 March 2026',
+        image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&h=520&fit=crop&auto=format',
+        summary: 'NVIDIA is improving both cloud performance and account-linked discovery at the same time.',
+        fullContent: `
+          <p>GeForce NOW is moving beyond raw catalog growth and focusing more on usability and responsiveness.</p>
+          <p>New account labels make it easier to see which linked subscriptions already unlock a title, reducing friction before play even starts.</p>
+          <p>The jump to 90 FPS in VR support also signals that NVIDIA wants the service to feel premium in latency-sensitive scenarios.</p>
+        `,
+        tags: ['NVIDIA', 'GeForce NOW', 'Cloud Gaming', 'VR']
+      },
+      'haber-7': {
+        title: 'NVIDIA and ComfyUI show faster local video generation workflows',
+        category: 'AI',
+        categoryClass: 'tag-ai',
+        date: '27 March 2026',
+        image: 'https://images.unsplash.com/photo-1574717024453-3540565e0d7d?w=900&h=520&fit=crop&auto=format',
+        summary: 'New GDC demos focused on lower-latency media creation directly on RTX-class systems.',
+        fullContent: `
+          <p>NVIDIA is leaning harder into workflows that keep media generation local instead of fully cloud-bound.</p>
+          <p>The demos around ComfyUI highlight faster iteration for creators who want direct control and less round-trip delay.</p>
+          <p>That could matter a lot for studios and solo creators building repeatable pipelines on desktop hardware.</p>
+        `,
+        tags: ['NVIDIA', 'ComfyUI', 'RTX', 'Creator']
+      },
+      'haber-8': {
+        title: 'The March Xbox update expands Home groups and color customization',
+        category: 'Software',
+        categoryClass: 'tag-software',
+        date: '26 March 2026',
+        image: 'https://images.unsplash.com/photo-1486572788966-cfd3df1f5b42?w=900&h=520&fit=crop&auto=format',
+        summary: 'Small but practical quality-of-life changes continue to shape the console dashboard.',
+        fullContent: `
+          <p>This update is not about a dramatic platform shift. It is about polishing how the console feels day to day.</p>
+          <p>Home groups reduce friction for users who bounce between a stable set of games and apps.</p>
+          <p>Microsoft keeps using these steady updates to make the interface feel more flexible without forcing a full redesign.</p>
+        `,
+        tags: ['Xbox', 'Update', 'Dashboard', 'System']
       }
     };
 
@@ -3819,14 +3101,11 @@
       const devaminiOkuButtons = document.querySelectorAll('.news-card__cta, .featured-card__cta');
       devaminiOkuButtons.forEach(button => {
         button.addEventListener('click', function(e) {
-          e.preventDefault();
           const newsCard = this.closest('.news-card, .featured-card');
           const haberId = newsCard ? newsCard.id : null;
           if (haberId && haberler[haberId]) {
+            e.preventDefault();
             acModal(haberId);
-          } else {
-            // VarsayÄ±lan haber gÃ¶ster
-            acModal('haber-1');
           }
         });
       });
