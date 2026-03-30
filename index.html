@@ -300,15 +300,17 @@
 
     <!-- Products Reviews Section -->
 
-    <section id="urunler" class="section">
+    <section id="urunler" class="section section-products">
 
       <div class="wrap">
 
-        <div class="section-head">
-
-          <h2>En Yeni Ürün İncelemeleri</h2>
-
-          <p class="section-desc">Teknoloji dünyasının en çok konuşulan ürünleri ve puanları</p>
+        <div class="section-head section-head--stacked">
+          <div>
+            <p class="eyebrow">Ürün İncelemeleri</p>
+            <h2>Öne Çıkan Ürün İncelemeleri</h2>
+            <p class="section-desc">Donanım ve tüketici elektroniğinde en çok konuşulan ürünleri daha büyük görseller ve daha temiz kartlarla inceleyin.</p>
+          </div>
+          <div class="section-badge">13 ürün kartı</div>
 
         </div>
 
@@ -781,7 +783,7 @@
 
             <div class="product-card__image">
 
-              <img src="https://picsum.photos/seed/teknohaber-img-15/1200/800" alt="Samsung 85" QN90B" />
+              <img src="https://picsum.photos/seed/teknohaber-img-15/1200/800" alt="Samsung 85 inç QN90B" />
 
               <div class="product-card__rating">
 
@@ -869,23 +871,29 @@
 
 
 
+    <section class="section-separator" aria-hidden="true">
+      <div class="wrap">
+        <div class="section-separator__line"></div>
+      </div>
+    </section>
+
     <section id="one-cikan" class="featured-wrap section-tight">
       <div class="wrap">
-        <h2 class="featured-title">Signal booster</h2>
+        <h2 class="featured-title">Editörün Seçimi</h2>
         <article class="featured-card">
           <a class="featured-card__link" href="#haber-4">
             <figure class="featured-card__media">
               <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1400&h=900&fit=crop&auto=format" alt="Samsung keeps expanding Galaxy AI beyond flagship devices" width="960" height="540" loading="eager" fetchpriority="high" decoding="async" />
-              <span class="featured-card__spot">Mobile AI becomes more accessible</span>
+              <span class="featured-card__spot">Mobil yapay zeka yayılıyor</span>
               <figcaption class="visually-hidden">Samsung keeps expanding Galaxy AI beyond flagship devices</figcaption>
             </figure>
             <div class="featured-card__content">
-              <span class="tag tag-mobile">Mobile</span>
-              <time datetime="2026-03-29">29 March 2026</time>
-              <h2>Samsung keeps expanding Galaxy AI beyond flagship devices</h2>
-              <p>Live translation, note summaries and smarter editing tools are reaching a wider device pool.</p>
+              <span class="tag tag-mobile">Mobil</span>
+              <time datetime="2026-03-29">29 Mart 2026</time>
+              <h2>Samsung, Galaxy AI deneyimini amiral gemisi dışındaki modellere de yayıyor</h2>
+              <p>Canlı çeviri, not özeti ve akıllı düzenleme araçları daha geniş cihaz grubuna ulaşarak mobil yapay zekayı günlük kullanıma taşıyor.</p>
               <span class="featured-card__lead">Samsung / Galaxy AI</span>
-              <span class="featured-card__cta">Read the full brief</span>
+              <span class="featured-card__cta">Detaylı özete git</span>
             </div>
           </a>
         </article>
@@ -898,22 +906,23 @@
       <div class="wrap">
         <div class="section-head section-head--stacked">
           <div>
-            <h2>Live feed</h2>
-            <p class="section-desc">A sharper March 2026 stream with stronger visuals, cleaner metadata and more relevant story groupings.</p>
+            <p class="eyebrow">Haber Akışı</p>
+            <h2>Güncel Teknoloji Haberleri</h2>
+            <p class="section-desc">Mart 2026 gündemini cihazlar, yazılım, yapay zeka ve bulut oyun başlıklarıyla daha düzenli bir akışta takip edin.</p>
           </div>
-          <div class="section-badge">15 fresh stories</div>
+          <div class="section-badge">15 güncel haber</div>
         </div>
-        <div class="news-toolbar" role="region" aria-label="News filters">
+        <div class="news-toolbar" role="region" aria-label="Haber filtreleri">
           <label class="search-field">
-            <span class="search-field__label">Search</span>
-            <input type="search" id="haber-ara" class="search-input" placeholder="Search titles and summaries" autocomplete="off" aria-describedby="haber-sonuc" />
+            <span class="search-field__label">Ara</span>
+            <input type="search" id="haber-ara" class="search-input" placeholder="Başlık ve özet içinde ara" autocomplete="off" aria-describedby="haber-sonuc" />
           </label>
-          <div class="filter-chips" id="kategori-filtre" role="group" aria-label="Category">
-            <button type="button" class="chip chip--active" data-filter="all">All</button><button type="button" class="chip" data-filter="ai">AI</button><button type="button" class="chip" data-filter="mobile">Mobile</button><button type="button" class="chip" data-filter="software">Software</button><button type="button" class="chip" data-filter="hardware">Hardware</button><button type="button" class="chip" data-filter="cloud">Cloud</button><button type="button" class="chip" data-filter="game">Gaming</button><button type="button" class="chip" data-filter="console">Console</button><button type="button" class="chip" data-filter="security">Security</button>
+          <div class="filter-chips" id="kategori-filtre" role="group" aria-label="Kategori">
+            <button type="button" class="chip chip--active" data-filter="all">Tümü</button><button type="button" class="chip" data-filter="ai">Yapay zeka</button><button type="button" class="chip" data-filter="mobile">Mobil</button><button type="button" class="chip" data-filter="software">Yazılım</button><button type="button" class="chip" data-filter="hardware">Donanım</button><button type="button" class="chip" data-filter="cloud">Bulut</button><button type="button" class="chip" data-filter="game">Oyun</button><button type="button" class="chip" data-filter="console">Konsol</button><button type="button" class="chip" data-filter="security">Güvenlik</button>
           </div>
-          <p id="haber-sonuc" class="news-result" aria-live="polite">15 stories shown</p>
+          <p id="haber-sonuc" class="news-result" aria-live="polite">15 haber gösteriliyor</p>
         </div>
-        <p id="haber-bos" class="news-empty hidden" role="status">No results. Try another category or search.</p>
+        <p id="haber-bos" class="news-empty hidden" role="status">Sonuç bulunamadı. Farklı bir arama ya da kategori deneyin.</p>
         <ul class="news-grid" id="haber-listesi">
           <li class="news-card" id="haber-1" data-category="mobile" data-search="apple macbook neo iphone 17e ipad air m4 macbook air m5 studio display sales">
             <article>
